@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yihao86.dao.AlbumDao">
+
+<!-- 根据id查询专辑名称 -->
+	<select id="findByIdName" resultType="String">
+   SELECT a_title FROM `album` WHERE aid=#{aid}
+  </select>
+  
+  <!-- 添加专辑 -->
+	<insert id="InsertAlbum" keyProperty="aid" keyColumn="aid">
+	   INSERT INTO `album`(`a_title`,`a_typeId`,`a_teacherId`,`a_abstract`,`a_img`) 
+	   VALUES(#{a_title},#{a_typeId},#{a_teacherId},#{a_abstract},#{a_img})
+	</insert>
+	
+	
+	<select id="findAll" resultType="Album">
+		SELECT * FROM `album`
+	</select>
+	
+</mapper>

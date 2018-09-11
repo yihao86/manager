@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<HTML xmlns:th="http://www.thymeleaf.org">
+<HEAD>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI Bootstrap 4 Admin Template">
+    <meta name="author" content="Lukasz Holeczek">
+    <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
+    <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+
+    <title>教师登录</title>
+
+    <!-- Icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Main styles for this application -->
+    <link rel="stylesheet" href="css/cssss/style1.css">
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<style type="text/css">
+form div span#zh,form div span#pwd,form div span#email { position: absolute;display:none ; vertical-align:middle; padding-left:12px; padding-right:10px; left: 212px;bottom: 36px;z-index:2;}
+form div span#zh.error,form div span#pwd.error,form div span#email.error { display:inline-block; border:1px solid #ff835a; background-color:#ffe8e0; }
+form div span#email.error{left:212px !important; }
+form div span#email.errorzz { display:inline-block; border:1px solid #ff835a; background-color:#ffe8e0;left: 156px; }
+</style>
+</head>
+
+<body class="app flex-row align-items-center">
+<div class="container">
+    <div class="row justify-content-center">
+    <form action="LoginTeacher" method="post">
+        <div class="col-md-8">
+            <div class="card-group mb-0" style="height: 420px;width: 800px;">
+                <div class="card p-2">
+                    <div class="card-block">
+                        <h1>登录</h1>
+                        <p class="text-muted">欢迎登录我们</p>
+                        <div class="error" style="clear: both; position: absolute;left: 155px;top:112px;color: red;" th:text="${message}"></div> 
+                        <div class="input-group mb-1">
+                            <span class="input-group-addon"><i class="icon-user"></i></span>
+                            <input type="text" name="t_account" class="form-control" placeholder="请输入您的账号"/>
+                            <span id="zh"></span>
+                        </div>
+                       
+                        <div class="input-group mb-2">
+                                <span class="input-group-addon"><i class="icon-lock"></i>
+                                </span>
+                            <input type="password" name="t_password" class="form-control" placeholder="请输入您的密码">
+                        <span id="pwd"></span>
+                        </div>
+                        <div class="input-group mb-1">
+                                <span class="input-group-addon">@
+                                </span>
+                            <input type="text" name="t_email" class="form-control" placeholder="请输入您的邮箱">
+                        <span id="email"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-primary px-2" STYLE="background-color: #FFD500;border-color: #FFD500;color: #fff;width: 120px;height: 40px;font-size: 16px;font-weight: 600">登 &nbsp;录</button>
+                            </div>
+                            <div class="col-6 text-right">
+                                <button type="button" class="btn btn-link px-0" style="color: #666666">
+                                    <a href="#">忘记密码?</a>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <button type="button" class="btn btn-link px-0">
+                                <a href="pages-login.html" style="font-size: 13px; ">管理员登录窗口</a>
+                            </button>
+                            <button type="button" class="btn btn-link px-0">
+                                <a href="pages-teacherLogin.html" style="font-size: 13px;margin-left: 20px !important;">教师登录窗口</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-inverse card-primary py-3 hidden-md-down" style="width:44%;background-color: #1E1E1E;border-color: #1E1E1E;">
+                    <div class="card-block text-center">
+                        <div>
+                            <h2>关于我们</h2>
+                            <p style="text-align: left;line-height: 25px">您需要注意的是：<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp; 请您记住你的账号和密码。注意安全，防止您账号信息的泄露。<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp; 您登录后可以对相关权限进行操作，请勿随意操作！否则损失将由您来承担<br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp; 如果您还没有教师账号，点击这里
+                            </p>
+                            <button type="button" class="btn btn-primary active mt-1" STYLE="background-color: #1E1E1E;border-color: #1E1E1E;margin-top: 0px !important;">
+                                <a href="pages-register.html" style="color: #FFD500">立即注册！</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+<!-- Bootstrap and necessary plugins -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/tether/dist/js/tether.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function(){
+$(":input").blur(function(){
+		if($(this).val()!=""){
+			$(this).next("span").html("").removeClass("error");
+		}
+	});
+	$("form").submit(function(){
+	 var input=$(":input");
+	 var szReg=/^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
+	 for(var i=0;i<input.length;i++){
+		 switch(i){
+		     case 0:
+		    	 if(input.eq(i).val()==""){
+		    		 $("#zh").text("账号不能为空！").addClass("error");		    		 
+		    		 return false;
+		    	 }
+		    	 break;
+		     case 1:
+		    	 if(input.eq(i).val()==""){
+		    		 $("#pwd").text("密码不能为空！").addClass("error");
+		    		 return false;
+		    	 }
+		    	 break;
+		     case 2:
+		    	 if(input.eq(i).val()==""){
+		    		 $("#email").text("邮箱不能为空！").addClass("error");
+		    		 return false;
+		    	 }
+		    	 break;
+		 }
+	 }
+	 if(szReg.test(input.eq(2).val())==false){
+		 $("#email").text("请输入正确的邮箱号码！").addClass("errorzz");
+		 return false;
+	 }
+	 return true;
+		
+	});
+});
+</script>
+</body>
+
+</html>

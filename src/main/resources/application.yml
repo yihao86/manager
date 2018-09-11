@@ -1,0 +1,71 @@
+server:
+  servlet:
+    context-path: /yihao
+
+Mydir:
+  serverURI: C:\tomcat_media\webapps\video\
+
+getPic:
+  serverURI: C:\tomcat_media\webapps\video\
+
+
+mybatis:
+  type-aliases-package: com.yihao86.pojo
+  configuration:
+    auto-mapping-behavior: full
+    use-generated-keys: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://111.230.232.46:3306/yihao86?serverTimezone=GMT&useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: z@2418
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm
+    time-zone: GMT+8
+    
+  resources:
+    static-locations:
+    - classpath:/templates/
+    
+  servlet:
+    multipart:
+      enabled: true
+      maxFileSize: 1024mb
+      maxRequestSize: 2048Mb
+      
+   # Redis数据库
+  redis:
+    database: 1
+    host: 111.230.232.46
+    port: 6379
+    password: 2418
+    timeout: 60s
+    jedis:
+      pool:
+        max-active: 18
+        max-wait: -1
+        max-idle: 18
+        min-idle: 0   
+    
+     
+#thymeleaf start
+  thymeleaf:
+    encoding: UTF-8
+    #开发时关闭缓存,不然没法看到实时页面
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+#thymeleaf end
+
+
+
+#
+##分页
+#pagehelper:
+#  helper-dialect: mysql
+#  reasonable: true
+#  support-methods-arguments: true
+#  params: count=countSql 

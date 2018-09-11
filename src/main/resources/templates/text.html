@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>text.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <div id="reg" class="loginbody" style="display: none;">
+<form id="msform" class="saveForm" method="post"  >
+<!-- progressbar -->
+<ul id="progressbar">
+<li class="active">账户注册</li>
+<li>安全信息</li>
+<li>详细资料</li>
+</ul>
+<!-- fieldsets -->
+<fieldset>
+<h2 class="fs-title">创建你的账户</h2>
+<h3 class="fs-subtitle">这是第一步</h3>
+<input class="easyui-validatebox"  type="hidden" name="state" value="zhuce" />
+<input class="dfin easyui-validatebox" type="text" id="newUser" onblur="upperCase()" data-options="required:true,missingMessage:'请输入账号'"  type="text" name="users.name" placeholder="账户"/>
+<input class="dfin easyui-validatebox"  id="pwd" data-options="required:true,missingMessage:'请输入密码'" type="password" placeholder="密码"/>
+<input class="dfin easyui-validatebox" data-options="required:true,missingMessage:'请再次输入密码'"  type="password" name="password" placeholder="确认密码"validType="equals['#pwd']"/>
+<input onkeydown="enterNext1()"class="dfin easyui-validatebox" type="text" id="newEmail" onblur="checkEmail()" data-options="required:true,validType:'email',missingMessage:'请输入E-Mail'" type="text" name="users.email" placeholder="E-Mail"/>
+<input type="button" name="next"id="nextbutton1"class="next action-button" value="下一步"/>
+</fieldset>
+<fieldset id="sub1" style="display:none">
+<h2 class="fs-title">个人信息</h2>
+<h3 class="fs-subtitle">我们将会为你保存它</h3>
+<input class="dfin easyui-validatebox" id="weidu" data-options="required:true,missingMessage:'请输入经度'" type="text" name="users.lat" placeholder="经度"/>
+<input class="dfin easyui-validatebox" id="jingdu" data-options="required:true,missingMessage:'请输入纬度'" type="text" name="users.lng" placeholder="纬度"/>
+<input class="dfin easyui-validatebox" id="showname" data-options="required:true,missingMessage:'请输入显示名称'" type="text" name="users.showname" placeholder="显示名称"/>
+<input onkeydown="enterNext2()" id="address" class="dfin easyui-validatebox"  data-options="required:true,missingMessage:'请输入地址'" type="text" name="users.address" placeholder="地址"/>
+<input type="button" name="previous" class="previous action-button" value="上一步" />
+<input type="button" name="next"  id="nextbutton2"class="next action-button" value="下一步"/>
+</fieldset>
+<fieldset id="sub" style="display:none">
+<h2 class="fs-title">个人信息</h2>
+<h3 class="fs-subtitle">我们将会为你保存它</h3>
+<input class="easyui-validatebox"  data-options="required:true,missingMessage:'请输入联系电话'" type="text" name="users.mgrtel" placeholder="联系电话"/>
+<input class="easyui-validatebox"  data-options="required:true,missingMessage:'请输入联系城市'" type="text" name="users.city" placeholder="城市"/>
+<input class="easyui-validatebox"  data-options="required:true,missingMessage:'请输入联系城市区号'" type="text" name="users.cityNum" placeholder="区号"/>
+<input type="button" name="previous" class="previous action-button" value="上一步" />
+<input type="submit" class="submit action-button" value="注册"  />
+</fieldset>
+</form>
+</div>
+<div id="rest" class="loginbody" style="display: none;">
+<form id="msform" class="resetForm" method="post"  >
+<!-- progressbar -->
+<ul id="progressbar">
+<li class="active">填写账号</li>
+<li>邮箱地址</li>
+<li>输入密码</li>
+</ul>
+<!-- fieldsets -->
+<fieldset style="display:none">
+<h2 class="fs-title">需要重置的账户</h2>
+<h3 class="fs-subtitle">这是第一步</h3>
+<input onkeydown="enterNext3()" class="dfin easyui-validatebox" type="text" onblur="checkCase()" data-options="required:true,missingMessage:'请输入账号!'"  type="text" id="sendname"name="name" placeholder="账户"/>
+<input type="button" name="next"id="nextbutton3" class="next action-button" value="下一步"/>
+</fieldset>
+<fieldset style="display:none">
+<h2 class="fs-title">邮箱地址</h2>
+<h3 class="fs-subtitle">注册账户时候的邮箱</h3>
+<input class="dfin easyui-validatebox"  data-options="required:true,validType:'email',missingMessage:'请输入E-Mail!'" type="text" id="sendemail" name="email" placeholder="E-Mail"/>
+<input onkeydown="enterNext4()"class="dfin easyui-validatebox"  data-options="required:true,missingMessage:'请输入验证码!'" type="text" name="checknum" id="checkNum" placeholder="验证码"/>
+<input id="btnSendCode" type="button" value="发送验证码" onclick="sendMessage()" /></p>
+<input type="button" name="previous" class="previous action-button" value="上一步" />
+<input type="button" name="next" id="nextbutton4" class="next action-button" value="下一步"/>
+</fieldset>
+<fieldset style="display:none">
+<h2 class="fs-title">请填写新密码</h2>
+<h3 class="fs-subtitle">我们将会为你保存它</h3>
+<input class="easyui-validatebox"  id="resetpwd" data-options="required:true,missingMessage:'请输入密码!'" type="password" placeholder="密码"/>
+<input class="easyui-validatebox"  data-options="required:true,missingMessage:'请再次输入密码!'" type="password" name="password" placeholder="确认密码"validType="equals['#resetpwd']"/>
+<input type="button" name="previous" class="previous action-button" value="上一步" />
+<input type="submit" class="submit action-button" value="重置"  />
+</fieldset>
+</form>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.8.3.js">
+$(".next").click(function(){
+var fieldset=$("fieldset");
+for(var i=0;i<fieldset.length;i++){
+var obj=fieldset[i];
+if(obj.style.display=="block"){
+var inputs=$(obj).children("input");
+for(var j=0;j<inputs.length;j++){
+//if($(obj).attr("class")=="dfin"){
+var classnames=inputs[j].className;
+if(classnames.indexOf("dfin")>-1){
+if($(inputs[j]).val()==""||$(inputs[j]).val()==null){
+return false;
+}
+}
+}
+
+}
+}
+
+		$("#first").click(function () {
+		  var zh=  $("#username").val();
+          var email=  $("#email").val();
+          var pwd=  $("#pwd").val();
+          var repwd=  $("#repwd").val();
+		 var szReg=/^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
+		 if(zh==null||zh==""){
+		 	$("#uname").text("账号不能为空！").addClass("error");
+		 	    			 
+		    return false;
+		 }
+		 if(email==null||email==""){
+		 	$("#email1").text("邮箱不能为空！").addClass("error");
+		    return false;
+		 }
+		 if(pwd==null||pwd==""||repwd==null||repwd==""){
+		 	$("#passward").text("密码不能为空！").addClass("error");		    			 
+		    return false;
+		 }
+	 if(szReg.test(email)==false){
+		 $("#email1").text("请输入正确的邮箱号码！").addClass("errorzz");
+		 return false;
+	 }
+	 if(pwd!=repwd){
+	 	$("#repassward").text("两次输入的密码不一致！").addClass("errorzz");
+		 return false;
+	 }	 
+	 return true;
+})
+
+
+function switchDiv(){
+if($('#flag').text()=='注册用户'){
+$('#login').css('display','none');
+$('#rest').css('display','none');
+$('#reg').css('display','block');
+$('#flag').text('用户登录');
+var firstfieldset=$('#reg').find("fieldset");
+$(firstfieldset[0]).css('display','block');
+$('#title').text('欢迎注册Open WiFi管理系统');
+}else{
+$('#login').css('display','block');
+$('#reg').css('display','none');
+$('#flag').text('注册用户');
+$('#title').text('欢迎登录Open WiFi管理系统');
+}
+if($('#rest').css('display')=='block'){
+$('#rest').css('display','none');
+}
+}
+function reset(){
+$('#login').css('display','none');
+$('#reg').css('display','none');
+$('#rest').css('display','block');
+$('#flag').text('用户登录');
+
+var firstfieldset=$('#rest').find("fieldset");
+$(firstfieldset[0]).css('display','block');
+}
+</script>
+  </body>
+</html>

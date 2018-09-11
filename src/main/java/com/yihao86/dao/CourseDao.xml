@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yihao86.dao.CourseDao">
+
+<!-- 根据id查询课程名称 -->
+	<select id="findByIdName" resultType="String">
+   SELECT crname FROM `course` WHERE crid=#{crid}
+  </select>
+  
+  <!-- 添加专辑 -->
+	<insert id="InsertCourse" keyProperty="crid" keyColumn="crid">
+	   INSERT INTO `course`(`crname`,`cr_aid`,`cr_img`,`cr_price`) VALUES(#{crname},#{cr_aid},#{cr_img},#{cr_price})
+	</insert>
+	
+	<select id="findAll" resultType="Course">
+		SELECT * FROM `course`
+	</select>
+  
+</mapper>

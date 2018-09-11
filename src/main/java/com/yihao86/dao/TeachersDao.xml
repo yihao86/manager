@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.yihao86.dao.TeachersDao">
+  <!-- 教师登录 -->
+  <select id="findTeacher"  resultType="Teachers">
+    SELECT * FROM teachers WHERE t_password=#{t_password} AND t_account=#{t_account} AND t_email=#{t_email}
+  </select>
+  
+  <!-- 管理员所有教师信息查询 -->
+  <select id="SelectTeacherInfo" resultType="map">
+  	SELECT tid,t_photo,t_name,t_disable,
+	(SELECT typename FROM TYPE t1 WHERE t1.typeid=t.`t_occupation`) typename,
+	(SELECT COUNT(0) FROM follow f WHERE f.`f_ftid` = t.`tid`) fans 
+	FROM `teachers` t
+	</select>
+	
+	<!-- 总教师人数 -->
+	<select id="countTeacher"  resultType="int">
+   		 SELECT count(0) FROM teachers
+ 	</select>
+ 	
+ 	<!-- 修改老师是否为禁用 -->
+ 	<update id="DisablleTeacher">
+		UPDATE `teachers` SET t_disable=#{t_disable} WHERE tid=#{tid}
+	</update>
+	
+	<!-- 账号是否存在 -->
+	<select id="NameExist" resultType="int">
+		SELECT COUNT(0) FROM `teachers` WHERE t_account=#{t_account}
+	</select>
+ 	
+ 	<!-- 注册一条信息 -->
+ 	<insert id="RegisterTeacher">
+ 		INSERT INTO `teachers` VALUES(#{t_name},#{t_account},#{t_password},#{t_email},#{t_photo},#{t_abstract},#{t_icard},0,#{t_occupation})
+ 	</insert>
+ 	
+ 	<select id="findByIdName" resultType="String">
+     SELECT t_name FROM `teachers` WHERE tid=#{tid}
+  </select>
+</mapper>

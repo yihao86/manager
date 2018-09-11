@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yihao86.dao.VideosDao">
+
+<!-- 某个老师的所有视频 -->
+  <select id="SelectByIdVideo" resultType="map">
+    SELECT v.vid,v.v_difficulty,v.`v_name`,a.`a_title`,c.`crname`,v.`v_uploadtime` FROM `videos` v INNER JOIN album a 
+	ON v.`v_aid`=a.`aid` INNER JOIN course c ON v.`v_crid`=c.`crid`
+	WHERE v_teacherId = #{v_teacherId}
+  </select>
+  
+  <!-- 所有有教师的视频，根据是否禁用进行排序 -->
+  <select id="SelectAllVideo" resultType="map">
+    SELECT v.vid,v.`v_name`,v.v_vpath,a.`a_title`,c.`crname`,v.`v_uploadtime`,v.v_to_examine,v.v_disable,t.`t_name` FROM `videos` v INNER JOIN album a 
+	ON v.`v_aid`=a.`aid` INNER JOIN course c ON v.`v_crid`=c.`crid` INNER JOIN teachers t ON v.`v_teacherId`=t.`tid`
+	ORDER BY v.v_to_examine,v.v_disable DESC
+  </select>
+  
+  <!-- 根据视频id查某一个视频 -->
+  <select id="VideoById" resultType="Videos">
+  		SELECT * FROM `videos` WHERE vid=#{vid}
+  </select>
+  
+  <!-- 修改视频是否为禁用 -->
+ 	<update id="DisablleVideo">
+		UPDATE `videos` SET `v_disable`=#{v_disable}  where `vid`=#{vid} 
+	</update>
+	
+	<!-- 上传视频 -->
+	<insert id="InsertVideo" keyProperty="vid" keyColumn="vid">
+	   INSERT INTO `videos` VALUES(NULL,#{v_name},#{v_teacherId},#{v_aid},#{v_crid},now(),#{v_payment},#{v_imgs},0,0,#{v_vpath},#{v_typeId},#{v_difficulty})
+	</insert>
+</mapper>
