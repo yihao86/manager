@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yihao86.dao.FollowDao">
+	<select id="fandFollowNum" resultType="int">
+		SELECT COUNT(0) followNum 
+		FROM follow 
+		WHERE f_ftid = #{f_ftid} 
+		<if test="f_time != null and f_time != ''">
+			AND f_time = DATE(#{f_time})
+		</if>
+	</select>
+</mapper>

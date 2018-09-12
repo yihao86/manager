@@ -46,4 +46,12 @@ public class TeachersServiceImpl implements TeachersService{
 		return dao.findByIdName(tid);
 	}
 
+	/**
+	 * 注册教师信息
+	 */
+	@Override
+	public Teachers RegisterTeacher(Teachers teacher) {		
+		return dao.RegisterTeacher(teacher);
+	}
+
 }

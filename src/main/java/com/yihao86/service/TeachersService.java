@@ -16,4 +16,7 @@ public interface TeachersService {
 	public boolean DisablleTeacher(int tid,int t_disable);
 	
 	public String findByIdName(int tid);
+	
+	//注册教师账号
+	Teachers RegisterTeacher(Teachers teacher);
 }
