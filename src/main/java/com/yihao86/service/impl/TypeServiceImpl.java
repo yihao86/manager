@@ -16,21 +16,14 @@ public class TypeServiceImpl implements TypeService {
 	private TypeDao td;
 	
 	@Override
-	public List<Type> selectAll() {
+	public List<Type> selectAll(int f_trid) {
 		// TODO Auto-generated method stub
-		return td.findAll();
+		return td.findAll(f_trid);
 	}
 
 	@Override
 	public List<Type> selectType() {
-		// TODO Auto-generated method stub
 		return td.findType();
-	}
-
-	@Override
-	public List<Type> selectSonList(int f_trid) {
-		// TODO Auto-generated method stub
-		return td.findSonList(f_trid);
 	}
 
 	@Override
@@ -39,10 +32,17 @@ public class TypeServiceImpl implements TypeService {
 		return td.findNameById(typeid);
 	}
 
+
 	@Override
-	public List<Type> findAllList() {
+	public int findByTypeId(int a_typeId) {
 		// TODO Auto-generated method stub
-		return td.findAllList();
+		return td.findByTypeId(a_typeId);
+	}
+
+	@Override
+	public List<Type> findAllAnameType() {
+		// TODO Auto-generated method stub
+		return td.findAllAnameType();
 	}
 
 }

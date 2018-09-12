@@ -6,21 +6,22 @@
 <mapper namespace="com.yihao86.dao.TypeDao">
 
 
-<select id="findAll" resultType="Type">
-   SELECT * FROM `type` WHERE `f_trid` &lt;&gt; `typeid`
-  </select>
-  
-  <select id="findAllList" resultType="Type">
-   SELECT * FROM `type`
-  </select>
-  
+	<select id="findByTypeId" resultType="int">
+   		SELECT t.`f_trid` FROM `album` a,`type` t 
+		WHERE a.`a_typeId`=t.`typeid` AND a.`a_typeId`=#{a_typeId}
+  	</select>
+
+	<select id="findAll" resultType="Type">
+   		SELECT * FROM `type` t WHERE t.`f_trid` &lt;&gt; t.`typeid` AND t.`f_trid`=#{f_trid}
+  	</select>
+  	
+  	<select id="findAllAnameType" resultType="Type">
+   		SELECT * FROM `type` t WHERE t.`f_trid` &lt;&gt; t.`typeid`
+  	</select>
+ 
   
   <select id="findType" resultType="Type">
    SELECT * FROM `type` WHERE `f_trid`=`typeid`
-  </select>
-  
-  <select id="findSonList" resultType="Type">
-  SELECT * FROM `type` WHERE `f_trid`=#{f_trid} AND `f_trid` &lt;&gt; `typeid`
   </select>
   
   <select id="findNameById" resultType="Type">

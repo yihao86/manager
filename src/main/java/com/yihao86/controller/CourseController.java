@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,6 +38,7 @@ public class CourseController {
 
 	@Autowired
 	private AlbumService as;
+	
 	@Autowired
 	RedisTemplate redisTemplate;
 	
@@ -48,11 +50,13 @@ public class CourseController {
 	 * @throws IOException 
 	 */
 	@RequestMapping("CourseAll")
-	public void CourseAll(HttpServletResponse response) throws IOException {
+	public void CourseAll(HttpServletResponse response,HttpSession session) throws IOException {
 		response.setCharacterEncoding("gbk");
 		response.setContentType("text/html;charset=gbk");
+		 String skey =(String)session.getAttribute("skey");
+		Teachers teacher = (Teachers)redisTemplate.opsForValue().get(skey);
 		PrintWriter out= response.getWriter();		
-		List<Course> clist=cs.findAll();
+		List<Map<String, Object>> clist=cs.findAll(teacher.getTid());
 	     String cdname=JSON.toJSONString(clist);
 	     System.out.println(cdname);
 	     out.write(cdname);

@@ -44,5 +44,13 @@ public class VideosServiceImpl implements VideosService{
 		return vd.InsertVideo(videos);
 	}
 
+	@Override
+	public boolean Upexamine(int vid) {
+		// TODO Auto-generated method stub
+		if(vd.Upexamine(vid)>0)
+			return true;
+		return false;
+	}
+
 	
 }

@@ -2,6 +2,8 @@ package com.yihao86.service.impl;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,9 +27,10 @@ public class AlbumServiceImpl implements AlbumService{
 		return ad.InsertAlbum(album);
 	}
 	@Override
-	public List<Album> findAll() {
+	public List<Album> findAll(int tid) {
 		// TODO Auto-generated method stub
-		return ad.findAll();
+	
+		return ad.findAll(tid);
 	}
 
 }

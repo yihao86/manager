@@ -49,7 +49,7 @@ public class ManagerController {
 		List<Map<String, Object>> tlist=ts.findTeacherInfo();
 		int count=ts.countTeacher();
 		List<Map<String, Object>> vlist=vs.findAllVideo();
-		List<Type> tylist=tys.findAllList();
+		List<Type> tylist=tys.selectType();
 		mav.addObject("ulist",ulist);
 		mav.addObject("tlist",tlist);
 		mav.addObject("vlist",vlist);
@@ -97,5 +97,23 @@ public class ManagerController {
 		out.close();	
 	}
 	
-
+	/**
+	 * 视频审核通过
+	 * @param vid
+	 * @param v_disable
+	 * @param response
+	 * @throws IOException
+	 */
+	@RequestMapping("examineVideo")
+	public void examineVideo(Integer vid,HttpServletResponse response) throws IOException {
+		OutputStream out= response.getOutputStream();
+		if(vs.Upexamine(vid)){
+			out.write("Y".getBytes());
+		}else{
+			out.write("N".getBytes());
+		}
+		out.flush();
+		out.close();	
+	}
+	
 }

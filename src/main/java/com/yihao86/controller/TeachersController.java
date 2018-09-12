@@ -33,14 +33,13 @@ public class TeachersController {
 	public ModelAndView LoginTeacher(ModelAndView mav,Teachers teachers,HttpSession session) {
 		String skey = "teacher_"+RandomUtil.GetRandom();
 		session.setAttribute("skey", skey);
-		Teachers teacher = ts.findTeacher(skey,teachers);
-		redisTemplate.opsForValue().set(skey,teacher);
+		Teachers teacher = ts.findTeacher(skey,teachers);	
 		if (teacher == null) {
 			mav.addObject("message", "用户名或密码错误!");
 			mav.setViewName("pages-teacherLogin.html");
 		} else {
-			mav.setViewName("forward:/VodeoManager");
-		
+			redisTemplate.opsForValue().set(skey,teacher);
+			mav.setViewName("forward:/VodeoManager");		
 		}
 		return mav;
 	}

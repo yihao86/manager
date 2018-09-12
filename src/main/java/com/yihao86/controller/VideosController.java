@@ -130,15 +130,13 @@ public class VideosController {
 		String cname=cs.findByIdName(Integer.valueOf(cid));
 		String t_name=ts.findByIdName(teacher.getTid());
         String path = fileDir+t_name+"/"+aname+"/"+cname+"/"+zname; // 设定文件保存的目录
-        
-        System.out.println(path);
-        
-        
+                     
         String pa=t_name+"/"+aname+"/"+cname+"/"+zname+"/"+files[0].getOriginalFilename();
         String pimg =t_name+"/"+aname+"/"+cname+"/"+files[1].getOriginalFilename();
         System.out.println("=======================================");
+       
         System.out.println(path);
-        System.out.println(pa);
+  
         System.out.println(pimg);
         System.out.println("=======================================");
         Videos videos=new Videos(vname,teacher.getTid(),Integer.valueOf(aid), Integer.valueOf(cid), pimg, pa,Integer.valueOf(tyName),nname);
@@ -174,8 +172,7 @@ public class VideosController {
                 }
             }
             System.out.println("上传图片到:" + path + fileName);
-            list.add(path + fileName);
-            
+            list.add(path + fileName);           
         }
         }else{
         	System.out.println("文件上传失败！");

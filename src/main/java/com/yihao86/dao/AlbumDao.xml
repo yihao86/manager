@@ -18,7 +18,7 @@
 	
 	
 	<select id="findAll" resultType="Album">
-		SELECT * FROM `album`
+		SELECT * FROM `album` a WHERE a.`a_teacherId`=#{tid}
 	</select>
 	
 </mapper>

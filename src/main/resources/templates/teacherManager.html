@@ -965,51 +965,36 @@
     		{
         		a.removeChild(aop[0]);  //循环删除所有子元素
     		}
-    	var ty = document.getElementById('tyName');
-    	var tyop = ty.children;        //获取select列表的所有子元素。
-    	for(var j=0,cd = tyop.length;j<cd;j++)   
-    		{
-        		ty.removeChild(tyop[0]);  //循环删除所有子元素
-    		}
+    	
     	var c = document.getElementById('cname');
     	var cop = c.children;        //获取select列表的所有子元素。
     	for(var f=0,clens = cop.length;f<clens;f++)   
     		{
         		c.removeChild(cop[0]);  //循环删除所有子元素
     		}
-	 //类型下拉框
-    	$.ajax({
-                    url: "TypeAll",
-                    dataType: "json",
-                    success: function (d) {
-                        $.each(d, function (index,tyunits) {
-                            $("#tyName").append("<option value="+tyunits.typeid+">" + tyunits.typename + "</option>");
-                        });
-                    },
- 
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("TypeAllerror");
-                    }
-                });
                 //专辑
                 $.ajax({
                     url: "AlbumAll",
                     dataType: "json",
                     success: function (adname) {
+                    	$("#aname").append("<option value='0' selected='selected'>--- 请 选 择 ---</option>");
                         $.each(adname, function (index,aunits) {
-                            $("#aname").append("<option value="+aunits.aid+">" + aunits.a_title + "</option>");
+                            $("#aname").append("<option value="+aunits.a_typeId+">" + aunits.a_title + "</option>");
                         });
+                        
                     },
  
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert("AlbumAllerror");
                     }
                 });
+                
                 //课程
                 $.ajax({
                     url: "CourseAll",
                     dataType: "json",
                     success: function (cdname) {
+                    $("#cname").append("<option value='0' selected='selected'>---  请 选 择  ---</option>");
                         $.each(cdname, function (index,cunits) {
                             $("#cname").append("<option value="+cunits.crid+">" + cunits.crname + "</option>");
                         });
@@ -1033,6 +1018,7 @@
                     url: "TypeAll",
                     dataType: "json",
                     success: function (d) {
+                     $("#atyName").append("<option value='0' selected='selected'>---  请 选 择  ---</option>");
                         $.each(d, function (index,tyunits) {
                             $("#atyName").append("<option value="+tyunits.typeid+">" + tyunits.typename + "</option>");
                         });
@@ -1055,6 +1041,7 @@ function cFind(){
                     url: "AlbumAll",
                     dataType: "json",
                     success: function (adname) {
+                     $("#caname").append("<option value='0' selected='selected'>---  请 选 择  ---</option>");
                         $.each(adname, function (index,aunits) {
                             $("#caname").append("<option value="+aunits.aid+">" + aunits.a_title + "</option>");
                         });
@@ -1065,6 +1052,35 @@ function cFind(){
                     }
                 });
 };
+	
+	$("#aname").change(function(){
+    var options=$("#aname option:selected");  //获取选中的项
+	alert(options.val());
+	var optionId=options.val();
+	//清空
+    var ty = document.getElementById('tyName');
+    	var tyop = ty.children;        //获取select列表的所有子元素。
+    	for(var j=0,cd = tyop.length;j<cd;j++)   
+    		{
+        		ty.removeChild(tyop[0]);  //循环删除所有子元素
+    		}
+     //类型下拉框
+    	$.ajax({
+                    url: "TypeAll?optionId="+optionId,                
+                    dataType: "json",
+                    success: function (d) {
+                     $("#tyName").append("<option value='0' selected='selected'>---  请 选 择  ---</option>");
+                        $.each(d, function (index,tyunits) {
+                            $("#tyName").append("<option value="+tyunits.typeid+">" + tyunits.typename + "</option>");
+                        });
+                    },
+ 
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("TypeAllerror");
+                    }
+                });
+	});
+
 	$("#form-data").submit(function(){
 		//form-data表单验证。
         var vname=$("#vname").val();
@@ -1077,6 +1093,9 @@ function cFind(){
 		 }
 		return true;
 	})
+	
+	
+	
 function del(vid) {
 	$("#vid").val(vid);
 }
