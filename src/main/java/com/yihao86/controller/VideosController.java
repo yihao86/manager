@@ -29,6 +29,7 @@ import com.yihao86.pojo.Teachers;
 import com.yihao86.pojo.Videos;
 import com.yihao86.service.AlbumService;
 import com.yihao86.service.CourseService;
+import com.yihao86.service.FollowService;
 import com.yihao86.service.TeachersService;
 import com.yihao86.service.UsersService;
 import com.yihao86.service.VideosService;
@@ -49,7 +50,9 @@ public class VideosController {
 	@Autowired
 	private TeachersService ts;
 	@Autowired
-    RedisTemplate redisTemplate;
+	private FollowService fs;
+	@Autowired
+    private RedisTemplate redisTemplate;
 	
 	/**
 	 * 根据教师id查询他所有的视频
@@ -69,7 +72,8 @@ public class VideosController {
 		List<Map<String, Object>> ulist=us.findUsers(teacher.getTid());
 		mav.addObject("teacher", teacher);
 		mav.addObject("list",list);
-		mav.addObject("ulist",ulist);
+		int num = fs.fandFollowNum(session);
+		mav.addObject("num",num);
 		mav.setViewName("teacherManager.html");
 		return mav;
 	}

@@ -39,10 +39,19 @@ public class TeachersController {
 			mav.addObject("message", "用户名或密码错误!");
 			mav.setViewName("pages-teacherLogin.html");
 		} else {
-			mav.setViewName("forward:/VodeoManager");
-		
+			mav.setViewName("forward:/VodeoManager");		
 		}
 		return mav;
+	}
+	
+	@RequestMapping("registerTeacher")
+	public void registerTeacher(Teachers teacher){
+		ts.RegisterTeacher(teacher);
+	}
+	
+	@RequestMapping("email")
+	public void email(Teachers teacher) {
+		
 	}
 	
 	

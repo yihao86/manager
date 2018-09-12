@@ -22,4 +22,7 @@ public interface TeachersDao {
 	public int DisablleTeacher(@Param("tid") int tid,@Param("t_disable") int t_disable);
 	
 	public String findByIdName(@Param("tid") int tid);
+	
+	//注册教师账号
+	Teachers RegisterTeacher(Teachers teacher);
 }

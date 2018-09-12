@@ -9,6 +9,12 @@ import lombok.Setter;
 @Setter
 public class Videos implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+
 	private int vid;//视频id
 	
 	private String v_name;//视频名称
