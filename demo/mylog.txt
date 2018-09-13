@@ -5314,3 +5314,782 @@ HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
 HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
 HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
 HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@487d3a3a
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/LoginTeacher]
+Looking up handler method for path /LoginTeacher
+Returning handler method [public org.springframework.web.servlet.ModelAndView com.yihao86.controller.TeachersController.LoginTeacher(org.springframework.web.servlet.ModelAndView,com.yihao86.pojo.Teachers,javax.servlet.http.HttpSession)]
+Returning cached instance of singleton bean 'teachersController'
+Last-Modified value for [/yihao/LoginTeacher] is: -1
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@270c235d] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@377627295 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT * FROM teachers WHERE t_password=? AND t_account=? AND t_email=? 
+==> Parameters: null, null, null
+<==      Total: 0
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@270c235d]
+Returning JDBC Connection to DataSource
+Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+No matching bean found for view name 'pages-teacherLogin.html'
+Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Invoking afterPropertiesSet() on bean with name 'pages-teacherLogin.html'
+Returning [org.thymeleaf.spring5.view.ThymeleafView@14fde033] based on requested media type 'text/html'
+Rendering view [org.thymeleaf.spring5.view.ThymeleafView@14fde033] in DispatcherServlet with name 'dispatcherServlet'
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@487d3a3a
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@487d3a3a
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/css/cssss/style1.css]
+Looking up handler method for path /css/cssss/style1.css
+Did not find handler method for [/css/cssss/style1.css]
+Matching patterns for request [/css/cssss/style1.css] are [/**]
+URI Template variables for request [/css/cssss/style1.css] are {}
+Mapping [/css/cssss/style1.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/css/cssss/style1.css] is: -1
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@2cdbd18e
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/css/simple-line-icons.css]
+Looking up handler method for path /css/simple-line-icons.css
+Did not find handler method for [/css/simple-line-icons.css]
+Matching patterns for request [/css/simple-line-icons.css] are [/**]
+URI Template variables for request [/css/simple-line-icons.css] are {}
+Mapping [/css/simple-line-icons.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/css/simple-line-icons.css] is: -1
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/bower_components/tether/dist/js/tether.min.js]
+Looking up handler method for path /bower_components/tether/dist/js/tether.min.js
+Did not find handler method for [/bower_components/tether/dist/js/tether.min.js]
+Matching patterns for request [/bower_components/tether/dist/js/tether.min.js] are [/**]
+URI Template variables for request [/bower_components/tether/dist/js/tether.min.js] are {}
+Mapping [/bower_components/tether/dist/js/tether.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/bower_components/tether/dist/js/tether.min.js] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@5523e19
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/bower_components/bootstrap/dist/js/bootstrap.min.js]
+Looking up handler method for path /bower_components/bootstrap/dist/js/bootstrap.min.js
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/css/font-awesome.min.css]
+Looking up handler method for path /css/font-awesome.min.css
+Did not find handler method for [/css/font-awesome.min.css]
+Matching patterns for request [/css/font-awesome.min.css] are [/**]
+URI Template variables for request [/css/font-awesome.min.css] are {}
+Mapping [/css/font-awesome.min.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/css/font-awesome.min.css] is: -1
+Did not find handler method for [/bower_components/bootstrap/dist/js/bootstrap.min.js]
+Matching patterns for request [/bower_components/bootstrap/dist/js/bootstrap.min.js] are [/**]
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/error]
+URI Template variables for request [/bower_components/bootstrap/dist/js/bootstrap.min.js] are {}
+Mapping [/bower_components/bootstrap/dist/js/bootstrap.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/bower_components/bootstrap/dist/js/bootstrap.min.js] is: -1
+Looking up handler method for path /error
+Returning handler method [public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)]
+Returning cached instance of singleton bean 'basicErrorController'
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Last-Modified value for [/yihao/error] is: -1
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/error]
+Looking up handler method for path /error
+Returning handler method [public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)]
+Returning cached instance of singleton bean 'basicErrorController'
+Last-Modified value for [/yihao/error] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@487d3a3a
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@487d3a3a
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/bower_components/jquery/dist/jquery.min.js]
+Looking up handler method for path /bower_components/jquery/dist/jquery.min.js
+Did not find handler method for [/bower_components/jquery/dist/jquery.min.js]
+Matching patterns for request [/bower_components/jquery/dist/jquery.min.js] are [/**]
+URI Template variables for request [/bower_components/jquery/dist/jquery.min.js] are {}
+Mapping [/bower_components/jquery/dist/jquery.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/bower_components/jquery/dist/jquery.min.js] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@487d3a3a
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/error]
+Looking up handler method for path /error
+Returning handler method [public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)]
+Returning cached instance of singleton bean 'basicErrorController'
+Last-Modified value for [/yihao/error] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/js/jquery-1.8.3.js]
+Looking up handler method for path /js/jquery-1.8.3.js
+Did not find handler method for [/js/jquery-1.8.3.js]
+Matching patterns for request [/js/jquery-1.8.3.js] are [/**]
+URI Template variables for request [/js/jquery-1.8.3.js] are {}
+Mapping [/js/jquery-1.8.3.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/js/jquery-1.8.3.js] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@2cdbd18e
+Written [{timestamp=Thu Sep 13 11:00:41 CST 2018, status=404, error=Not Found, message=No message available, path=/yihao/bower_components/bootstrap/dist/js/bootstrap.min.js}] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7847ef2c]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Written [{timestamp=Thu Sep 13 11:00:41 CST 2018, status=404, error=Not Found, message=No message available, path=/yihao/bower_components/jquery/dist/jquery.min.js}] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7847ef2c]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Written [{timestamp=Thu Sep 13 11:00:41 CST 2018, status=404, error=Not Found, message=No message available, path=/yihao/bower_components/tether/dist/js/tether.min.js}] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7847ef2c]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/bower_components/jquery/dist/jquery.min.js]
+Looking up handler method for path /bower_components/jquery/dist/jquery.min.js
+Did not find handler method for [/bower_components/jquery/dist/jquery.min.js]
+Matching patterns for request [/bower_components/jquery/dist/jquery.min.js] are [/**]
+URI Template variables for request [/bower_components/jquery/dist/jquery.min.js] are {}
+Mapping [/bower_components/jquery/dist/jquery.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/bower_components/jquery/dist/jquery.min.js] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/error]
+Looking up handler method for path /error
+Returning handler method [public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)]
+Returning cached instance of singleton bean 'basicErrorController'
+Last-Modified value for [/yihao/error] is: -1
+Written [{timestamp=Thu Sep 13 11:00:41 CST 2018, status=404, error=Not Found, message=No message available, path=/yihao/bower_components/jquery/dist/jquery.min.js}] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7847ef2c]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/fonts/Simple-Line-Icons.woff2]
+Looking up handler method for path /fonts/Simple-Line-Icons.woff2
+Did not find handler method for [/fonts/Simple-Line-Icons.woff2]
+Matching patterns for request [/fonts/Simple-Line-Icons.woff2] are [/**]
+URI Template variables for request [/fonts/Simple-Line-Icons.woff2] are {}
+Mapping [/fonts/Simple-Line-Icons.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/fonts/Simple-Line-Icons.woff2] is: -1
+Skip CORS processing: request is from same origin
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/bower_components/tether/dist/js/tether.min.js]
+Looking up handler method for path /bower_components/tether/dist/js/tether.min.js
+Did not find handler method for [/bower_components/tether/dist/js/tether.min.js]
+Matching patterns for request [/bower_components/tether/dist/js/tether.min.js] are [/**]
+URI Template variables for request [/bower_components/tether/dist/js/tether.min.js] are {}
+Mapping [/bower_components/tether/dist/js/tether.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/bower_components/tether/dist/js/tether.min.js] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/error]
+Looking up handler method for path /error
+Returning handler method [public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)]
+Returning cached instance of singleton bean 'basicErrorController'
+Last-Modified value for [/yihao/error] is: -1
+Written [{timestamp=Thu Sep 13 11:00:43 CST 2018, status=404, error=Not Found, message=No message available, path=/yihao/bower_components/tether/dist/js/tether.min.js}] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7847ef2c]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/fonts/Simple-Line-Icons.ttf]
+Looking up handler method for path /fonts/Simple-Line-Icons.ttf
+Did not find handler method for [/fonts/Simple-Line-Icons.ttf]
+Matching patterns for request [/fonts/Simple-Line-Icons.ttf] are [/**]
+URI Template variables for request [/fonts/Simple-Line-Icons.ttf] are {}
+Mapping [/fonts/Simple-Line-Icons.ttf] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/fonts/Simple-Line-Icons.ttf] is: -1
+Skip CORS processing: request is from same origin
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/bower_components/bootstrap/dist/js/bootstrap.min.js]
+Looking up handler method for path /bower_components/bootstrap/dist/js/bootstrap.min.js
+Did not find handler method for [/bower_components/bootstrap/dist/js/bootstrap.min.js]
+Matching patterns for request [/bower_components/bootstrap/dist/js/bootstrap.min.js] are [/**]
+URI Template variables for request [/bower_components/bootstrap/dist/js/bootstrap.min.js] are {}
+Mapping [/bower_components/bootstrap/dist/js/bootstrap.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/bower_components/bootstrap/dist/js/bootstrap.min.js] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/error]
+Looking up handler method for path /error
+Returning handler method [public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)]
+Returning cached instance of singleton bean 'basicErrorController'
+Last-Modified value for [/yihao/error] is: -1
+Written [{timestamp=Thu Sep 13 11:00:43 CST 2018, status=404, error=Not Found, message=No message available, path=/yihao/bower_components/bootstrap/dist/js/bootstrap.min.js}] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7847ef2c]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing POST request for [/yihao/LoginTeacher]
+Looking up handler method for path /LoginTeacher
+Returning handler method [public org.springframework.web.servlet.ModelAndView com.yihao86.controller.TeachersController.LoginTeacher(org.springframework.web.servlet.ModelAndView,com.yihao86.pojo.Teachers,javax.servlet.http.HttpSession)]
+Returning cached instance of singleton bean 'teachersController'
+Skip CORS processing: request is from same origin
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a81f2ba] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@1955472999 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT * FROM teachers WHERE t_password=? AND t_account=? AND t_email=? 
+==> Parameters: 123456789(String), 123456789(String), 123456789@qq.com(String)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a81f2ba]
+Returning JDBC Connection to DataSource
+Opening RedisConnection
+Trying to get a Redis connection for: RedisURI [host='111.230.232.46', port=6379]
+Starting without optional epoll library
+Starting without optional kqueue library
+-Dio.netty.eventLoopThreads: 8
+-Dio.netty.noKeySetOptimization: false
+-Dio.netty.selectorAutoRebuildThreshold: 512
+Adding reference to io.netty.channel.nio.NioEventLoopGroup@3f093787, existing ref count 0
+Resolved SocketAddress 111.230.232.46:6379 using RedisURI [host='111.230.232.46', port=6379]
+Connecting to Redis at 111.230.232.46:6379
+-Dio.netty.processId: 4820 (auto-detected)
+-Djava.net.preferIPv4Stack: false
+-Djava.net.preferIPv6Addresses: false
+Loopback interface: lo (Software Loopback Interface 1, 127.0.0.1)
+Failed to get SOMAXCONN from sysctl and file \proc\sys\net\core\somaxconn. Default: 200
+-Dio.netty.machineId: 80:a5:89:ff:fe:ab:86:19 (auto-detected)
+-Dio.netty.allocator.type: pooled
+-Dio.netty.threadLocalDirectBufferSize: 0
+-Dio.netty.maxThreadLocalCharBufferSize: 16384
+-Dio.netty.recycler.maxCapacityPerThread: 4096
+-Dio.netty.recycler.maxSharedCapacityFactor: 2
+-Dio.netty.recycler.linkCapacity: 16
+-Dio.netty.recycler.ratio: 8
+-Dio.netty.buffer.bytebuf.checkAccessible: true
+Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@1600e7bc
+[channel=0xad184e53, [id: 0x04732b30] (inactive), chid=0x1] channelRegistered()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] channelActive()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] activateEndpointAndExecuteBufferedCommands 0 command(s) buffered
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] activating endpoint
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] flushCommands()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] flushCommands() Flushing 0 commands
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, last known addr=/111.230.232.46:6379] channelActive()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, last known addr=/111.230.232.46:6379] channelActive()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] channelActive() done
+Connecting to Redis at 111.230.232.46:6379: Success
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, last known addr=/111.230.232.46:6379] userEventTriggered(ctx, io.lettuce.core.ConnectionEvents$Activated@3751f52d)
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, last known addr=/111.230.232.46:6379] userEventTriggered(ctx, io.lettuce.core.ConnectionEvents$Activated@3751f52d)
+dispatching command AsyncCommand [type=AUTH, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() writeAndFlush command AsyncCommand [type=AUTH, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] write(ctx, AsyncCommand [type=AUTH, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], promise)
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() done
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379] writing command AsyncCommand [type=AUTH, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Received: 5 bytes, 1 commands in the stack
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Stack contains: 1 commands
+Decode AsyncCommand [type=AUTH, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+Decoded AsyncCommand [type=AUTH, output=StatusOutput [output=OK, error='null'], commandType=io.lettuce.core.protocol.Command], empty stack: true
+dispatching command AsyncCommand [type=SELECT, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() writeAndFlush command AsyncCommand [type=SELECT, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() done
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] write(ctx, AsyncCommand [type=SELECT, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], promise)
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379] writing command AsyncCommand [type=SELECT, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Received: 5 bytes, 1 commands in the stack
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Stack contains: 1 commands
+Decode AsyncCommand [type=SELECT, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+Decoded AsyncCommand [type=SELECT, output=StatusOutput [output=OK, error='null'], commandType=io.lettuce.core.protocol.Command], empty stack: true
+dispatching command AsyncCommand [type=SET, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() writeAndFlush command AsyncCommand [type=SET, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() done
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] write(ctx, AsyncCommand [type=SET, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], promise)
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379] writing command AsyncCommand [type=SET, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Received: 5 bytes, 1 commands in the stack
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Stack contains: 1 commands
+Decode AsyncCommand [type=SET, output=StatusOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+Decoded AsyncCommand [type=SET, output=StatusOutput [output=OK, error='null'], commandType=io.lettuce.core.protocol.Command], empty stack: true
+Closing Redis Connection
+Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+No matching bean found for view name 'forward:/VodeoManager'
+Returning [org.springframework.web.servlet.view.InternalResourceView: unnamed; URL [/VodeoManager]] based on requested media type 'text/html'
+Rendering view [org.springframework.web.servlet.view.InternalResourceView: unnamed; URL [/VodeoManager]] in DispatcherServlet with name 'dispatcherServlet'
+Added model object 'modelAndView' of type [org.springframework.web.servlet.ModelAndView] to request in view with name 'null'
+Added model object 'org.springframework.validation.BindingResult.modelAndView' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name 'null'
+Added model object 'teachers' of type [com.yihao86.pojo.Teachers] to request in view with name 'null'
+Added model object 'org.springframework.validation.BindingResult.teachers' of type [org.springframework.validation.BeanPropertyBindingResult] to request in view with name 'null'
+Forwarding to resource [/VodeoManager] in InternalResourceView 'null'
+DispatcherServlet with name 'dispatcherServlet' processing POST request for [/yihao/VodeoManager]
+Looking up handler method for path /VodeoManager
+Returning handler method [public org.springframework.web.servlet.ModelAndView com.yihao86.controller.VideosController.VodeoManager(org.springframework.web.servlet.ModelAndView,javax.servlet.http.HttpSession)]
+Returning cached instance of singleton bean 'videosController'
+Skip CORS processing: request is from same origin
+Opening RedisConnection
+dispatching command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() writeAndFlush command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() done
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] write(ctx, AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], promise)
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379] writing command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Received: 452 bytes, 1 commands in the stack
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Stack contains: 1 commands
+Decode AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+Decoded AsyncCommand [type=GET, output=ValueOutput [output=[B@31e2754f, error='null'], commandType=io.lettuce.core.protocol.Command], empty stack: true
+Closing Redis Connection
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51c39758] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@1512084161 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT v.vid,v.v_difficulty,v.`v_name`,a.`a_title`,c.`crname`,v.`v_uploadtime` FROM `videos` v INNER JOIN album a ON v.`v_aid`=a.`aid` INNER JOIN course c ON v.`v_crid`=c.`crid` WHERE v_teacherId = ? 
+==> Parameters: 1(Integer)
+<==      Total: 14
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@51c39758]
+Returning JDBC Connection to DataSource
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2f9ce9f] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@250248091 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT * FROM `follow` f INNER JOIN `users` u ON f.`f_uid`=u.`uid` WHERE f_ftid = ? 
+==> Parameters: 1(Integer)
+<==      Total: 3
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2f9ce9f]
+Returning JDBC Connection to DataSource
+Opening RedisConnection
+dispatching command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() writeAndFlush command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() done
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] write(ctx, AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], promise)
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379] writing command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Received: 452 bytes, 1 commands in the stack
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Stack contains: 1 commands
+Decode AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+Decoded AsyncCommand [type=GET, output=ValueOutput [output=[B@52ecdcfb, error='null'], commandType=io.lettuce.core.protocol.Command], empty stack: true
+Closing Redis Connection
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62989370] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@1683844663 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT COUNT(0) followNum FROM follow WHERE f_ftid = ? 
+==> Parameters: 1(Integer)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62989370]
+Returning JDBC Connection to DataSource
+Requested media types are [text/html, application/xhtml+xml, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8] based on Accept header types and producible media types [*/*])
+No matching bean found for view name 'teacherManager.html'
+Returning cached instance of singleton bean 'org.springframework.cache.config.internalCacheAdvisor'
+Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+Invoking afterPropertiesSet() on bean with name 'teacherManager.html'
+Returning [org.thymeleaf.spring5.view.ThymeleafView@220cc840] based on requested media type 'text/html'
+Rendering view [org.thymeleaf.spring5.view.ThymeleafView@220cc840] in DispatcherServlet with name 'dispatcherServlet'
+Successfully completed request
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/css/common.css]
+Looking up handler method for path /css/common.css
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/css/bootstrap.min.css]
+Looking up handler method for path /css/bootstrap.min.css
+Did not find handler method for [/css/common.css]
+Matching patterns for request [/css/common.css] are [/**]
+URI Template variables for request [/css/common.css] are {}
+Did not find handler method for [/css/bootstrap.min.css]
+Mapping [/css/common.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/css/common.css] is: -1
+Matching patterns for request [/css/bootstrap.min.css] are [/**]
+URI Template variables for request [/css/bootstrap.min.css] are {}
+Mapping [/css/bootstrap.min.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/css/bootstrap.min.css] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/css/slide.css]
+Looking up handler method for path /css/slide.css
+Did not find handler method for [/css/slide.css]
+Matching patterns for request [/css/slide.css] are [/**]
+URI Template variables for request [/css/slide.css] are {}
+Mapping [/css/slide.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/css/slide.css] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@487d3a3a
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/css/jquery.nouislider.css]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Looking up handler method for path /css/jquery.nouislider.css
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@5523e19
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/css/flat-ui.min.css]
+Looking up handler method for path /css/flat-ui.min.css
+Did not find handler method for [/css/flat-ui.min.css]
+Matching patterns for request [/css/flat-ui.min.css] are [/**]
+URI Template variables for request [/css/flat-ui.min.css] are {}
+Did not find handler method for [/css/jquery.nouislider.css]
+Mapping [/css/flat-ui.min.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/css/flat-ui.min.css] is: -1
+Matching patterns for request [/css/jquery.nouislider.css] are [/**]
+URI Template variables for request [/css/jquery.nouislider.css] are {}
+Mapping [/css/jquery.nouislider.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/css/jquery.nouislider.css] is: -1
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/js/jquery.min.js]
+Looking up handler method for path /js/jquery.min.js
+Did not find handler method for [/js/jquery.min.js]
+Matching patterns for request [/js/jquery.min.js] are [/**]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+URI Template variables for request [/js/jquery.min.js] are {}
+Mapping [/js/jquery.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/js/jquery.min.js] is: -1
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@487d3a3a
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/js/bootstrap.min.js]
+Looking up handler method for path /js/bootstrap.min.js
+Did not find handler method for [/js/bootstrap.min.js]
+Matching patterns for request [/js/bootstrap.min.js] are [/**]
+URI Template variables for request [/js/bootstrap.min.js] are {}
+Mapping [/js/bootstrap.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/js/bootstrap.min.js] is: -1
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/css/fileinput.min.css]
+Looking up handler method for path /css/fileinput.min.css
+Did not find handler method for [/css/fileinput.min.css]
+Matching patterns for request [/css/fileinput.min.css] are [/**]
+URI Template variables for request [/css/fileinput.min.css] are {}
+Mapping [/css/fileinput.min.css] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/css/fileinput.min.css] is: -1
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@487d3a3a
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@68348e5f
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/js/jquery-2.1.4.min.js]
+Looking up handler method for path /js/jquery-2.1.4.min.js
+Did not find handler method for [/js/jquery-2.1.4.min.js]
+Matching patterns for request [/js/jquery-2.1.4.min.js] are [/**]
+URI Template variables for request [/js/jquery-2.1.4.min.js] are {}
+Mapping [/js/jquery-2.1.4.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/js/jquery-2.1.4.min.js] is: -1
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/js/fileinput.min.js]
+Looking up handler method for path /js/fileinput.min.js
+Did not find handler method for [/js/fileinput.min.js]
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Matching patterns for request [/js/fileinput.min.js] are [/**]
+Successfully completed request
+URI Template variables for request [/js/fileinput.min.js] are {}
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@487d3a3a
+Mapping [/js/fileinput.min.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/js/fileinput.min.js] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@5523e19
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/js/jquery.nouislider.js]
+Looking up handler method for path /js/jquery.nouislider.js
+Did not find handler method for [/js/jquery.nouislider.js]
+Matching patterns for request [/js/jquery.nouislider.js] are [/**]
+URI Template variables for request [/js/jquery.nouislider.js] are {}
+Mapping [/js/jquery.nouislider.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/js/jquery.nouislider.js] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@5523e19
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/images/logo.png]
+Looking up handler method for path /images/logo.png
+Did not find handler method for [/images/logo.png]
+Matching patterns for request [/images/logo.png] are [/**]
+URI Template variables for request [/images/logo.png] are {}
+Mapping [/images/logo.png] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/images/logo.png] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@5523e19
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/images/icon_char.png]
+Looking up handler method for path /images/icon_char.png
+Did not find handler method for [/images/icon_char.png]
+Matching patterns for request [/images/icon_char.png] are [/**]
+URI Template variables for request [/images/icon_char.png] are {}
+Mapping [/images/icon_char.png] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/images/icon_char.png] is: -1
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/images/icon_user_grey.png]
+Looking up handler method for path /images/icon_user_grey.png
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@5523e19
+Did not find handler method for [/images/icon_user_grey.png]
+Matching patterns for request [/images/icon_user_grey.png] are [/**]
+URI Template variables for request [/images/icon_user_grey.png] are {}
+Mapping [/images/icon_user_grey.png] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/images/icon_user_grey.png] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/images/icon_change_grey.png]
+Looking up handler method for path /images/icon_change_grey.png
+Did not find handler method for [/images/icon_change_grey.png]
+Matching patterns for request [/images/icon_change_grey.png] are [/**]
+URI Template variables for request [/images/icon_change_grey.png] are {}
+Mapping [/images/icon_change_grey.png] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/images/icon_change_grey.png] is: -1
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/images/icon_house_grey.png]
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@487d3a3a
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/fonts/lato/lato-regular.woff]
+Looking up handler method for path /fonts/lato/lato-regular.woff
+Did not find handler method for [/fonts/lato/lato-regular.woff]
+Matching patterns for request [/fonts/lato/lato-regular.woff] are [/**]
+URI Template variables for request [/fonts/lato/lato-regular.woff] are {}
+Mapping [/fonts/lato/lato-regular.woff] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/fonts/lato/lato-regular.woff] is: -1
+Skip CORS processing: request is from same origin
+Looking up handler method for path /images/icon_house_grey.png
+Did not find handler method for [/images/icon_house_grey.png]
+Matching patterns for request [/images/icon_house_grey.png] are [/**]
+URI Template variables for request [/images/icon_house_grey.png] are {}
+Mapping [/images/icon_house_grey.png] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/images/icon_house_grey.png] is: -1
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@487d3a3a
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@487d3a3a
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/fonts/lato/lato-bold.woff]
+Looking up handler method for path /fonts/lato/lato-bold.woff
+Did not find handler method for [/fonts/lato/lato-bold.woff]
+Matching patterns for request [/fonts/lato/lato-bold.woff] are [/**]
+URI Template variables for request [/fonts/lato/lato-bold.woff] are {}
+Mapping [/fonts/lato/lato-bold.woff] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/fonts/lato/lato-bold.woff] is: -1
+Skip CORS processing: request is from same origin
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@487d3a3a
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@5523e19
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/fonts/glyphicons-halflings-regular.woff2]
+Looking up handler method for path /fonts/glyphicons-halflings-regular.woff2
+Did not find handler method for [/fonts/glyphicons-halflings-regular.woff2]
+Matching patterns for request [/fonts/glyphicons-halflings-regular.woff2] are [/**]
+URI Template variables for request [/fonts/glyphicons-halflings-regular.woff2] are {}
+Mapping [/fonts/glyphicons-halflings-regular.woff2] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[class path resource [templates/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@7134b8a7]]] and 1 interceptor
+Last-Modified value for [/yihao/fonts/glyphicons-halflings-regular.woff2] is: -1
+Skip CORS processing: request is from same origin
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/AlbumAll]
+Looking up handler method for path /AlbumAll
+Returning handler method [public void com.yihao86.controller.AlbumController.AlbumAll(javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpSession) throws java.io.IOException]
+Returning cached instance of singleton bean 'albumController'
+Last-Modified value for [/yihao/AlbumAll] is: -1
+Opening RedisConnection
+dispatching command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() writeAndFlush command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() done
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] write(ctx, AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], promise)
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379] writing command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@5523e19
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/CourseAll]
+Looking up handler method for path /CourseAll
+Returning handler method [public void com.yihao86.controller.CourseController.CourseAll(javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpSession) throws java.io.IOException]
+Returning cached instance of singleton bean 'courseController'
+Last-Modified value for [/yihao/CourseAll] is: -1
+Opening RedisConnection
+dispatching command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() writeAndFlush command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] write(ctx, AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], promise)
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() done
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379] writing command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Received: 452 bytes, 2 commands in the stack
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Stack contains: 2 commands
+Decode AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+Decoded AsyncCommand [type=GET, output=ValueOutput [output=[B@6bea43ae, error='null'], commandType=io.lettuce.core.protocol.Command], empty stack: true
+Closing Redis Connection
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72784d13] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Received: 452 bytes, 1 commands in the stack
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Stack contains: 1 commands
+Decode AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+Decoded AsyncCommand [type=GET, output=ValueOutput [output=[B@2627dd3e, error='null'], commandType=io.lettuce.core.protocol.Command], empty stack: true
+Closing Redis Connection
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b16074c] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@1003338885 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT * FROM `album` a WHERE a.`a_teacherId`=? 
+==> Parameters: 1(Integer)
+JDBC Connection [HikariProxyConnection@947182661 wrapping com.mysql.jdbc.JDBC4Connection@2fa48fef] will not be managed by Spring
+==>  Preparing: SELECT c.`crid`,c.`crname` FROM `course` c,`album` a WHERE c.`cr_aid`=a.`aid` AND a.`a_teacherId`=? 
+==> Parameters: 1(Integer)
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@72784d13]
+Returning JDBC Connection to DataSource
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5b16074c]
+Returning JDBC Connection to DataSource
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@5523e19
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/TypeAll]
+Looking up handler method for path /TypeAll
+Returning handler method [public void com.yihao86.controller.TypeController.TypeAll(java.lang.String,javax.servlet.http.HttpServletResponse) throws java.io.IOException]
+Returning cached instance of singleton bean 'typeController'
+Last-Modified value for [/yihao/TypeAll] is: -1
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3313232a] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@1930811631 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT t.`f_trid` FROM `album` a,`type` t WHERE a.`a_typeId`=t.`typeid` AND a.`a_typeId`=? 
+==> Parameters: 1(Integer)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3313232a]
+Returning JDBC Connection to DataSource
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a9b2932] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@540758328 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT * FROM `type` t WHERE t.`f_trid` <> t.`typeid` AND t.`f_trid`=? 
+==> Parameters: 1(Integer)
+<==      Total: 8
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a9b2932]
+Returning JDBC Connection to DataSource
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/TypeAll]
+Looking up handler method for path /TypeAll
+Returning handler method [public void com.yihao86.controller.TypeController.TypeAll(java.lang.String,javax.servlet.http.HttpServletResponse) throws java.io.IOException]
+Returning cached instance of singleton bean 'typeController'
+Last-Modified value for [/yihao/TypeAll] is: -1
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@731d22c] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@1838547479 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT t.`f_trid` FROM `album` a,`type` t WHERE a.`a_typeId`=t.`typeid` AND a.`a_typeId`=? 
+==> Parameters: 22(Integer)
+<==      Total: 1
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@731d22c]
+Returning JDBC Connection to DataSource
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ebe76ac] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@333796310 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT * FROM `type` t WHERE t.`f_trid` <> t.`typeid` AND t.`f_trid`=? 
+==> Parameters: 17(Integer)
+<==      Total: 5
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ebe76ac]
+Returning JDBC Connection to DataSource
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+Bound request context to thread: org.apache.catalina.connector.RequestFacade@1e7d00e9
+DispatcherServlet with name 'dispatcherServlet' processing GET request for [/yihao/AlbumAll]
+Looking up handler method for path /AlbumAll
+Returning handler method [public void com.yihao86.controller.AlbumController.AlbumAll(javax.servlet.http.HttpServletResponse,javax.servlet.http.HttpSession) throws java.io.IOException]
+Returning cached instance of singleton bean 'albumController'
+Last-Modified value for [/yihao/AlbumAll] is: -1
+Opening RedisConnection
+dispatching command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() writeAndFlush command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] write(ctx, AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command], promise)
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] write() done
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379] writing command AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Received: 452 bytes, 1 commands in the stack
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] Stack contains: 1 commands
+Decode AsyncCommand [type=GET, output=ValueOutput [output=null, error='null'], commandType=io.lettuce.core.protocol.Command]
+Decoded AsyncCommand [type=GET, output=ValueOutput [output=[B@2cd53b12, error='null'], commandType=io.lettuce.core.protocol.Command], empty stack: true
+Closing Redis Connection
+Creating a new SqlSession
+SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e72415f] was not registered for synchronization because synchronization is not active
+Fetching JDBC Connection from DataSource
+JDBC Connection [HikariProxyConnection@569520397 wrapping com.mysql.jdbc.JDBC4Connection@6ebb46e6] will not be managed by Spring
+==>  Preparing: SELECT * FROM `album` a WHERE a.`a_teacherId`=? 
+==> Parameters: 1(Integer)
+<==      Total: 2
+Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e72415f]
+Returning JDBC Connection to DataSource
+Null ModelAndView returned to DispatcherServlet with name 'dispatcherServlet': assuming HandlerAdapter completed request handling
+Successfully completed request
+Cleared thread-bound request context: org.apache.catalina.connector.RequestFacade@1e7d00e9
+Application shutdown requested.
+Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@683dbc2c: startup date [Thu Sep 13 10:51:53 CST 2018]; root of context hierarchy
+Found key 'spring.liveBeansView.mbeanDomain' in PropertySource 'systemProperties' with value of type String
+Returning cached instance of singleton bean 'lifecycleProcessor'
+Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@202b0582: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.event.internalEventListenerProcessor,org.springframework.context.event.internalEventListenerFactory,myApplication,org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory,albumController,courseController,dataController,managerController,teachersController,typeController,videosController,redisConfig,albumServiceImpl,courseServiceImpl,followServiceImpl,teachersServiceImpl,typeServiceImpl,usersServiceImpl,videosServiceImpl,redisService,org.springframework.cache.annotation.ProxyCachingConfiguration,org.springframework.cache.config.internalCacheAdvisor,cacheOperationSource,cacheInterceptor,cacheManager,redisTemplate,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration,org.springframework.transaction.config.internalTransactionAdvisor,transactionAttributeSource,transactionInterceptor,org.springframework.transaction.config.internalTransactionalEventListenerFactory,albumDao,courseDao,followDao,purchaseDao,teachersDao,typeDao,usersDao,videosDao,org.springframework.boot.autoconfigure.AutoConfigurationPackages,org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration,org.springframework.boot.autoconfigure.condition.BeanTypeRegistry,propertySourcesPlaceholderConfigurer,org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration,websocketContainerCustomizer,org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration,org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat,tomcatServletWebServerFactory,org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration,servletWebServerFactoryCustomizer,tomcatServletWebServerFactoryCustomizer,server-org.springframework.boot.autoconfigure.web.ServerProperties,org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor,org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata,webServerFactoryCustomizerBeanPostProcessor,errorPageRegistrarBeanPostProcessor,org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration,dispatcherServlet,mainDispatcherServletPathProvider,spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties,org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration,dispatcherServletRegistration,org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration,org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration,defaultValidator,methodValidationPostProcessor,org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration,error,beanNameViewResolver,org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration,conventionErrorViewResolver,org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration,errorAttributes,basicErrorController,errorPageCustomizer,preserveErrorControllerTargetClassPostProcessor,spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties,org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration,faviconHandlerMapping,faviconRequestHandler,org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration,requestMappingHandlerAdapter,requestMappingHandlerMapping,mvcConversionService,mvcValidator,mvcContentNegotiationManager,mvcPathMatcher,mvcUrlPathHelper,viewControllerHandlerMapping,beanNameHandlerMapping,resourceHandlerMapping,mvcResourceUrlProvider,defaultServletHandlerMapping,mvcUriComponentsContributor,httpRequestHandlerAdapter,simpleControllerHandlerAdapter,handlerExceptionResolver,mvcViewResolver,mvcHandlerMappingIntrospector,org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter,defaultViewResolver,viewResolver,welcomePageHandlerMapping,requestContextFilter,org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration,hiddenHttpMethodFilter,httpPutFormContentFilter,org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari,dataSource,org.springframework.boot.autoconfigure.jdbc.DataSourceJmxConfiguration$Hikari,org.springframework.boot.autoconfigure.jdbc.DataSourceJmxConfiguration,org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration$PooledDataSourceConfiguration,org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration,hikariPoolDataSourceMetadataProvider,org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration,org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker,org.springframework.boot.autoconfigure.jdbc.DataSourceInitializationConfiguration,dataSourceInitializerPostProcessor,org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties,org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration,sqlSessionFactory,sqlSessionTemplate,mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties,org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration,mbeanExporter,objectNamingStrategy,mbeanServer,org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration,springApplicationAdminRegistrar,org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration,lettuceClientResources,redisConnectionFactory,org.springframework.boot.autoconfigure.data.redis.JedisConnectionConfiguration,org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration,stringRedisTemplate,spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties,org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration,org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration,persistenceExceptionTranslationPostProcessor,org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration,reactiveRedisTemplate,org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration,keyValueMappingContext,redisCustomConversions,redisReferenceResolver,redisConverter,redisKeyValueAdapter,redisKeyValueTemplate,org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration,standardJacksonObjectMapperBuilderCustomizer,spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties,org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration,jacksonObjectMapperBuilder,org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration,parameterNamesModule,org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration,jacksonObjectMapper,org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration,jsonComponentModule,org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration,stringHttpMessageConverter,spring.http.encoding-org.springframework.boot.autoconfigure.http.HttpEncodingProperties,org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration,mappingJackson2HttpMessageConverter,org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration,org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration,messageConverters,org.springframework.data.web.config.ProjectingArgumentResolverRegistrar,projectingArgumentResolverBeanPostProcessor,org.springframework.data.web.config.SpringDataWebConfiguration,pageableResolver,sortResolver,org.springframework.data.web.config.SpringDataJacksonConfiguration,jacksonGeoModule,org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration,pageableCustomizer,sortCustomizer,spring.data.web-org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties,org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration$JacksonCodecConfiguration,jacksonCodecCustomizer,org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration,org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration,spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties,org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration$JdbcTemplateConfiguration,jdbcTemplate,org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration$NamedParameterJdbcTemplateConfiguration,namedParameterJdbcTemplate,org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration,spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties,org.springframework.boot.autoconfigure.reactor.core.ReactorCoreAutoConfiguration,spring.reactor-org.springframework.boot.autoconfigure.reactor.core.ReactorCoreProperties,org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration,spring.security-org.springframework.boot.autoconfigure.security.SecurityProperties,org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafJava8TimeDialect,java8TimeDialect,org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration,thymeleafViewResolver,org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration,org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration,templateEngine,org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration,defaultTemplateResolver,org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration,spring.thymeleaf-org.springframework.boot.autoconfigure.thymeleaf.ThymeleafProperties,org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration,transactionManager,org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration,org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration,transactionTemplate,org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration,platformTransactionManagerCustomizers,spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties,org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration,restTemplateBuilder,org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration,tomcatWebServerFactoryCustomizer,org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration,org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration,characterEncodingFilter,localeCharsetMappingsCustomizer,org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration,multipartConfigElement,multipartResolver,spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties]; root of factory hierarchy
+Invoking destroy() on bean with name 'redisKeyValueTemplate'
+Invoking destroy() on bean with name 'redisKeyValueAdapter'
+Stopped RedisMessageListenerContainer
+Invoking destroy() on bean with name 'springApplicationAdminRegistrar'
+Invoking destroy() on bean with name 'mbeanExporter'
+Unregistering JMX-exposed beans on shutdown
+Unregistering JMX-exposed beans
+Retrieved dependent beans for bean 'mvcResourceUrlProvider': [requestMappingHandlerMapping]
+Retrieved dependent beans for bean 'mvcValidator': [requestMappingHandlerAdapter]
+Retrieved dependent beans for bean 'requestMappingHandlerAdapter': [mvcUriComponentsContributor]
+Invoking destroy() on bean with name 'mvcValidator'
+Invoking destroy() on bean with name 'defaultValidator'
+Retrieved dependent beans for bean 'redisConnectionFactory': [redisTemplate, cacheManager, stringRedisTemplate, reactiveRedisTemplate]
+Retrieved dependent beans for bean 'redisTemplate': [albumController, courseController, followServiceImpl, teachersController, videosController, redisService, redisReferenceResolver]
+Retrieved dependent beans for bean 'followServiceImpl': [dataController, videosController]
+Retrieved dependent beans for bean 'redisReferenceResolver': [redisConverter]
+Invoking destroy() on bean with name 'redisConnectionFactory'
+close()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] close()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] channelInactive()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, epid=0x1] deactivating endpoint handler
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] channelInactive() done
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, last known addr=/111.230.232.46:6379] channelInactive()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, last known addr=/111.230.232.46:6379] Reconnect scheduling disabled
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, last known addr=/111.230.232.46:6379] channelInactive()
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, last known addr=/111.230.232.46:6379] Reconnect scheduling disabled
+[channel=0xad184e53, /192.168.43.15:51566 -> /111.230.232.46:6379, chid=0x1] channelUnregistered()
+Freed 8 thread-local buffer(s) from thread: lettuce-nioEventLoop-4-1
+Invoking destroy method 'shutdown' on bean with name 'lettuceClientResources'
+Retrieved dependent beans for bean 'sqlSessionTemplate': [albumDao, courseDao, followDao, usersDao, teachersDao, videosDao, typeDao, purchaseDao]
+Retrieved dependent beans for bean 'albumDao': [albumServiceImpl]
+Retrieved dependent beans for bean 'courseDao': [courseServiceImpl]
+Retrieved dependent beans for bean 'usersDao': [usersServiceImpl]
+Retrieved dependent beans for bean 'usersServiceImpl': [managerController]
+Retrieved dependent beans for bean 'teachersDao': [teachersServiceImpl]
+Retrieved dependent beans for bean 'videosDao': [videosServiceImpl]
+Retrieved dependent beans for bean 'typeDao': [typeServiceImpl]
+Retrieved dependent beans for bean 'typeServiceImpl': [typeController]
+Invoking destroy() on bean with name 'sqlSessionTemplate'
+Retrieved dependent beans for bean 'dataSource': [sqlSessionFactory, org.springframework.boot.autoconfigure.jdbc.DataSourceJmxConfiguration$Hikari, org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration$JdbcTemplateConfiguration, org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration]
+Invoking destroy method 'close' on bean with name 'dataSource'
+HikariPool-1 - Shutdown initiated...
+HikariPool-1 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6ebb46e6: (connection evicted)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@2fa48fef: (connection evicted)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@47f67889: (connection evicted)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@6363eeb1: (connection evicted)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@613e75e7: (connection evicted)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@2ec6af0e: (connection evicted)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@4490b293: (connection evicted)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@2c55ed75: (connection evicted)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@689bb5a6: (connection evicted)
+HikariPool-1 - Closing connection com.mysql.jdbc.JDBC4Connection@f6b3264: (connection evicted)
+HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+HikariPool-1 - Shutdown completed.
+Invoking destroy() on bean with name 'characterEncodingFilter'
+Invoking destroy() on bean with name 'httpPutFormContentFilter'
+Invoking destroy() on bean with name 'hiddenHttpMethodFilter'
+Invoking destroy() on bean with name 'requestContextFilter'
+Retrieved dependent beans for bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory': [org.springframework.context.annotation.internalConfigurationAnnotationProcessor]
