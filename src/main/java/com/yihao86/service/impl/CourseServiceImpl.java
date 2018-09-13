@@ -1,6 +1,7 @@
 package com.yihao86.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,9 +26,10 @@ public class CourseServiceImpl implements CourseService {
 		return cd.InsertCourse(course);
 	}
 	@Override
-	public List<Course> findAll() {
-		// TODO Auto-generated method stub
-		return cd.findAll();
+	public List<Map<String, Object>> findAll(int tid) {
+		
+		return cd.findAll(tid);
 	}
+	
 
 }

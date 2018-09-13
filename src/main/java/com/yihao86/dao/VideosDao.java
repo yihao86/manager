@@ -23,4 +23,7 @@ public interface VideosDao {
 	
 	//新增一条视频
 	public int InsertVideo(Videos videos);
+	
+	//视频审核通过
+	public int Upexamine(@Param("vid") int vid);
 }

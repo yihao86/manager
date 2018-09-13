@@ -10,5 +10,5 @@ public interface AlbumService {
 	
 	public int InsertAlbum(Album album);
 	
-	public List<Album> findAll();
+	public List<Album> findAll(int tid);
 }

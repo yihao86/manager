@@ -12,5 +12,5 @@ public interface AlbumDao {
 
 	public int InsertAlbum(Album album);
 	
-	public List<Album> findAll();
+	public List<Album> findAll(@Param("tid") int tid);
 }

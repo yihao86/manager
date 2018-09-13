@@ -140,11 +140,7 @@ public class VideosController {
 		String aname=as.findByIdName(Integer.valueOf(aid));
 		String cname=cs.findByIdName(Integer.valueOf(cid));
 		String t_name=ts.findByIdName(teacher.getTid());
-        String path = fileDir+t_name+"/"+aname+"/"+cname+"/"+zname; // 设定文件保存的目录
-        
-        System.out.println(path);
-        
-        
+        String path = fileDir+t_name+"/"+aname+"/"+cname+"/"+zname; // 设定文件保存的目录     
         String pa=t_name+"/"+aname+"/"+cname+"/"+zname+"/"+files[0].getOriginalFilename();
         String pimg =t_name+"/"+aname+"/"+cname+"/"+files[1].getOriginalFilename();
         System.out.println("=======================================");

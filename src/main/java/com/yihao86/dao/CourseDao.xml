@@ -15,8 +15,9 @@
 	   INSERT INTO `course`(`crname`,`cr_aid`,`cr_img`,`cr_price`) VALUES(#{crname},#{cr_aid},#{cr_img},#{cr_price})
 	</insert>
 	
-	<select id="findAll" resultType="Course">
-		SELECT * FROM `course`
+	<select id="findAll" resultType="map">
+		SELECT c.`crid`,c.`crname` FROM `course` c,`album` a
+        WHERE c.`cr_aid`=a.`aid` AND a.`a_teacherId`=#{tid}
 	</select>
   
 </mapper>

@@ -7,27 +7,30 @@ import com.yihao86.pojo.Type;
 public interface TypeService {
 	
 	/**
-	 * 查询所有类型的方法
+	 * 查询专辑下所有类型的方法
 	 * @return
 	 */
-	public List<Type> selectAll();
+	public List<Type> selectAll(int f_trid);
 	
 	/**
-	 * 查询父类的方法
+	 * 查询父节点
 	 * @return
 	 */
 	public List<Type> selectType();
 	
-	/**
-	 * 查询子类方法
-	 * @param f_trid
-	 * @return
-	 */
-	public List<Type> selectSonList(int f_trid);
-	
 	
 	public String findNameById(int typeid);
+
 	
-	public List<Type> findAllList();
+	/**
+	*根据id查询专辑类型名称
+	 */
+	public int findByTypeId(int a_typeId);
+	
+	/**
+	 * 查询所有子类
+	 * @return
+	 */
+	public List<Type> findAllAnameType();
 	
 }

@@ -1,3 +1,4 @@
+
 package com.yihao86.controller;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,7 @@ import com.yihao86.pojo.Teachers;
 import com.yihao86.service.TeachersService;
 import com.yihao86.service.impl.RandomUtil;
 
+
 @Controller
 public class TeachersController {
 	
@@ -29,34 +31,30 @@ public class TeachersController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping("/LoginTeacher")
+	@RequestMapping("LoginTeacher")
 	public ModelAndView LoginTeacher(ModelAndView mav,Teachers teachers,HttpSession session) {
 		String skey = "teacher_"+RandomUtil.GetRandom();
 		session.setAttribute("skey", skey);
 		Teachers teacher = ts.findTeacher(skey,teachers);
-		redisTemplate.opsForValue().set(skey,teacher);
+		
 		if (teacher == null) {
 			mav.addObject("message", "用户名或密码错误!");
 			mav.setViewName("pages-teacherLogin.html");
 		} else {
+			redisTemplate.opsForValue().set(skey,teacher);
 			mav.setViewName("forward:/VodeoManager");		
 		}
 		return mav;
 	}
 	
-	
-	@RequestMapping("/registerTeacher")
+	@RequestMapping("registerTeacher")
 	public void registerTeacher(Teachers teacher){
 		ts.RegisterTeacher(teacher);
 	}
 	
-	
-	
-	@RequestMapping("/email")
-	public String email(Teachers teacher) throws Exception {
-		System.out.println(teacher.getT_abstract());
-		ts.eamil(teacher);
-		return "index";
+	@RequestMapping("email")
+	public void email(Teachers teacher) {
+		
 	}
 	
 	

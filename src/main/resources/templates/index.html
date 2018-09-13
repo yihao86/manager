@@ -420,6 +420,7 @@
                             </div>
                             
                             <div class="modal-body"> 
+                            <input type="hidden" id="vid"/> 
                              <div style="width: 510px; height: 289px" id="m" class="m">
       						<video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="560" height="400"
 		 					 poster="" data-setup="{}" style="height: 282px !important">
@@ -440,7 +441,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">不通过</button>
-                                <button type="button" class="btn btn-xs btn-green">通  过</button>
+                                <button type="button" onclick="examine();" class="btn btn-xs btn-green">通  过</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -491,57 +492,21 @@
                                     操作
                                 </div>
                             </div>
-                            <div class="tablebody" style="margin-top: 0px" >
-                                <div class="row"  style="border-radius: 5px;margin-top: 0px" th:each="ty,nsStat:${tylist}">
-                                    <div id="topAD" class="col-lg-4 col-md-4 col-sm-4 col-xs-4" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSystem" aria-expanded="true" aria-controls="collapseOne">
-                                        <span id="topA" class="glyphicon  glyphicon-triangle-bottom  "></span> <span th:text=""></span>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                        <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
-                                        <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
-                                    </div>
-                                </div>
-
-                                <!--系统管理折叠狂-->
-
-                                <div id="collapseSystem" class="collapse in" aria-expanded="true">
-                                    <div class="row">
-                                        <div id="topBD" onClick="changeA()" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 levl2" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAccount" aria-expanded="true" aria-controls="collapseOne">
-                                            <span onClick="changeB()" id="topB" class="glyphicon glyphicon-triangle-bottom"></span> <span>账号管理</span>
+                            <div class="tablebody" style="margin-top: 0px" th:each="ty,nsStat:${tylist}">
+                                    <div class="row" style="border-radius: 5px;margin-top: 0px" >
+                                        <div id="topCD" class="col-lg-4 col-md-4 col-sm-4 col-xs-4" role="button" data-toggle="collapse" data-parent="#accordion" href="'#collapse'+ty.typeid" aria-expanded="true" aria-controls="collapseOne">
+                                            <span id="topC" onClick="changeC()" class="glyphicon glyphicon-triangle-bottom"></span><span th:text="${ty.typename}"></span>
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
                                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
                                         </div>
-                                    </div>
-                                    <!--用户管理折叠狂-->
-                                    <div id="collapseAccount" class="collapse in" aria-expanded="true">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  levl3">
-                                                <span class=""> &nbsp;</span><span>资源管理</span>
-                                            </div>
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                                <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
-                                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <div class="row">
-                                        <div id="topCD" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 levl2" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSchool" aria-expanded="true" aria-controls="collapseOne">
-                                            <span id="topC" onClick="changeC()" class="glyphicon glyphicon-triangle-bottom"></span><span> 地区管理</span>
-                                        </div>
-                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                                            <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
-                                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
-                                        </div>
-                                    </div>
+                                     </div>
                                     <!--地区管理折叠狂-->
-                                    <div id="collapseSchool" class="collapse in" aria-expanded="true">
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4   levl3">
-                                                <span></span><span>地区管理</span>
+                                    <div id="'collapse'" class="collapse in" aria-expanded="true">
+                                        <div class="row" th:each="tys,nsStat:${ty.subTypes}">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <span></span><span th:text="${tys.typename}"></span>
                                             </div>
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                                 <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
@@ -549,7 +514,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                         <!--页码块-->
@@ -745,13 +709,10 @@
 	 	var tid = $('#tid').val();
 	 	var t_disable=$('#tdisable').val();
 	 	if(t_disable==1){
-	 		alert("123");
 	 		t_disable=0;
 	 	}else{
 	 		t_disable=1;
 	 	}
-	 	alert(tid);
-	 	alert(t_disable);
 		$.post("disableTeacher?tid="+tid+"&t_disable="+t_disable,function(text){
 			if(text=="Y"){
 				alert("修改成功！");
@@ -777,13 +738,10 @@
 	 	var vid = $('#vid').val();
 	 	var v_disable=$('#vdisable').val();
 	 	if(v_disable==1){
-	 		alert("123");
 	 		v_disable=0;
 	 	}else{
 	 		v_disable=1;
 	 	}
-	 	alert(vid);
-	 	alert(v_disable);
 		$.post("disableVideo?vid="+vid+"&v_disable="+v_disable,function(text){
 			if(text=="Y"){
 				alert("修改成功！");
@@ -795,7 +753,7 @@
 	}
 	
 	
-	//视频审核
+	//传入视频到窗口
 	function audit(vid) {
 		$.ajax(
                 {
@@ -822,6 +780,20 @@
                     }
         },"json");
     };
+    
+    //视频审核
+	function examine(){
+	 	var vid = $('#vid').val();
+	 	alert(vid);
+		$.post("examineVideo?vid="+vid,function(text){
+			if(text=="Y"){
+				alert("视频审核成功！");
+				 window.location.href="UManager";
+			}else{
+				alert("视频审核失败！");
+			}
+		});
+	}
 </script>
 </body>
 

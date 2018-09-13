@@ -27,11 +27,21 @@ public class TypeController {
 	 * @throws IOException 
 	 */
 	@RequestMapping("TypeAll")
-	public void TypeAll(HttpServletResponse response) throws IOException {
+	public void TypeAll(String optionId,HttpServletResponse response) throws IOException {
+		
+		System.out.println(optionId);
 		response.setCharacterEncoding("gbk");
 		response.setContentType("text/html;charset=gbk");
-		PrintWriter out= response.getWriter();		
-		 List<Type> tylist=ts.selectAll();
+		PrintWriter out= response.getWriter();
+		List<Type> tylist=null;
+		if(optionId!=null){
+			int typeid=ts.findByTypeId(Integer.valueOf(optionId));
+			tylist=ts.selectAll(typeid);
+			System.out.println(tylist);
+		}else{
+			tylist=ts.findAllAnameType();
+			System.out.println(tylist);
+		}
 	     String d=JSON.toJSONString(tylist);
 	     System.out.println(d);
 	     out.write(d);

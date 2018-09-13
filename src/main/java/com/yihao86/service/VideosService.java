@@ -16,4 +16,6 @@ public interface VideosService {
 	public boolean DisablleVideo(int vid,int v_disable);
 		
 	public int InsertVideo(Videos videos);
+	
+	public boolean Upexamine(int vid);
 }

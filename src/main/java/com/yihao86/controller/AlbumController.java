@@ -45,11 +45,15 @@ public class AlbumController {
 	 * @throws IOException
 	 */
 	@RequestMapping("AlbumAll")
-	public void AlbumAll(HttpServletResponse response) throws IOException {
+	public void AlbumAll(HttpServletResponse response,HttpSession session) throws IOException {
 		response.setCharacterEncoding("gbk");
 		response.setContentType("text/html;charset=gbk");
 		PrintWriter out = response.getWriter();
-		List<Album> alist = as.findAll();
+		
+		String keys=(String) session.getAttribute("skey");	
+		Teachers t=(Teachers) redisTemplate.opsForValue().get(keys);
+		
+		List<Album> alist = as.findAll(t.getTid());
 		String adname = JSON.toJSONString(alist);
 		System.out.println(adname);
 		out.write(adname);

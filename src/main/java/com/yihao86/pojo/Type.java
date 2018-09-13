@@ -1,5 +1,8 @@
 package com.yihao86.pojo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,5 +14,5 @@ public class Type {
 	 
 	 private String typename;
 	 
-	 private int f_trid;
+	private int f_trid;
 }
