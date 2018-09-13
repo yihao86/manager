@@ -29,7 +29,7 @@ public class TeachersController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping("LoginTeacher")
+	@RequestMapping("/LoginTeacher")
 	public ModelAndView LoginTeacher(ModelAndView mav,Teachers teachers,HttpSession session) {
 		String skey = "teacher_"+RandomUtil.GetRandom();
 		session.setAttribute("skey", skey);
@@ -44,14 +44,19 @@ public class TeachersController {
 		return mav;
 	}
 	
-	@RequestMapping("registerTeacher")
+	
+	@RequestMapping("/registerTeacher")
 	public void registerTeacher(Teachers teacher){
 		ts.RegisterTeacher(teacher);
 	}
 	
-	@RequestMapping("email")
-	public void email(Teachers teacher) {
-		
+	
+	
+	@RequestMapping("/email")
+	public String email(Teachers teacher) throws Exception {
+		System.out.println(teacher.getT_abstract());
+		ts.eamil(teacher);
+		return "index";
 	}
 	
 	

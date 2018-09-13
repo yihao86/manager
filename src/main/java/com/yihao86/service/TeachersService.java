@@ -19,4 +19,7 @@ public interface TeachersService {
 	
 	//注册教师账号
 	Teachers RegisterTeacher(Teachers teacher);
+	
+	//发送邮件
+	void eamil(Teachers teacher)  throws Exception;
 }

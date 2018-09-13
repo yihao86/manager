@@ -4,5 +4,12 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.yihao86.dao.PurchaseDao">
-	
+	<select id="fandPurchase" resultType="int">
+		SELECT COUNT(0) purchaseNum FROM purchase p,course c,album a 
+		WHERE p.p_cid = c.crid AND c.cr_aid = a.aid 
+		AND a.a_teacherId = #{a_teacherId} 
+		<if test="p_time != null and p_time != ''">
+			AND p_time = DATE(#{p_time})
+		</if>
+	</select>
 </mapper>

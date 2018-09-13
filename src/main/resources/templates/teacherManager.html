@@ -506,13 +506,20 @@
                     <div style=" width: 150px;height: 100px; float: left; margin:20px 0 10px 0px" >
                     	<div>
                     		<p style="color: #354457;font-size: 16px;font-weight: 800;text-align: center;">今日关注人数</p>
-                    		<p style="color: #182465;font-size: 20px;font-weight: 800;text-align: center;">5</p>
+                    		<p style="color: #182465;font-size: 20px;font-weight: 800;text-align: center;" th:text="${follow}">5</p>
                     	</div>
                     </div>
                     <div style=" width: 150px;height: 100px; float: left; margin:20px 0 10px 0px" >
                     	<div>
                     		<p style="color: #354457;font-size: 16px;font-weight: 800;text-align: center;">今日购买人数</p>
-                    		<p style="color: #666;font-size: 20px;font-weight: 800;text-align: center;">3</p>
+                    		<p style="color: #666;font-size: 20px;font-weight: 800;text-align: center;" th:text="${pnum}">3</p>
+                    	</div>
+                    	
+                    </div>
+                    <div style="width: 150px;height: 100px; float: left; margin:20px 0 10px 0px;" >
+                    	<div>
+                    		<p style="color: #354457;font-size: 16px;font-weight: 800;text-align: center;">购买总人数</p>
+                    		<p style="color: #772020;font-size: 20px;font-weight: 800;text-align: center;" th:text="${pnumz}">10</p>
                     	</div>
                     </div>
                     
@@ -539,12 +546,12 @@
             }
         },
         legend: {
-            data:['今日关注量','今日购买量','总人数']
+            data:['今日关注数','今日购买数','总关注数']
         },
         xAxis: [
             {
                 type: 'category',
-                data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11','12'],
+                data: [],
                 axisPointer: {
                     type: 'shadow'
                 }
@@ -555,8 +562,8 @@
                 type: 'value',
                 name: '数值',
                 min: 0,
-                max: 250,
-                interval: 50,
+                max: 25,
+                interval: 5,
                 axisLabel: {
                     formatter: '{value}'
                 }
@@ -565,8 +572,8 @@
                 type: 'value',
                 name: '总数',
                 min: 0,
-                max: 10000,
-                interval: 1000,
+                max: 100,
+                interval: 10,
                 axisLabel: {
                     formatter: '{value}'
                 }
@@ -576,18 +583,18 @@
             {
                 name:'今日关注数',
                 type:'bar',
-                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                data:[]
             },
             {
                 name:'今日购买数',
                 type:'bar',
-                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                data:[]
             },
             {
                 name:'总关注数',
                 type:'line',
                 yAxisIndex: 1,
-                data:[2000, 5000, 1000, 1000, 6520, 6000, 5000, 4000, 7500, 7000, 8000, 9000]
+                data:[]
             }
         ]
     };
@@ -610,21 +617,25 @@
     success : function(result) {
         //请求成功时执行该函数内容，result即为服务器返回的json对象
         if (result) {
-               for(var i=0;i<result.length;i++){       
-                  names.push(result[i].name);    //挨个取出类别并填入类别数组
-                }
-               for(var i=0;i<result.length;i++){       
-                   nums.push(result[i].num);    //挨个取出销量并填入销量数组
-                 }
                myChart.hideLoading();    //隐藏加载动画
                myChart.setOption({        //加载数据图表
                    xAxis: {
-                       data: names
+                       data: result.time
                    },
                    series: [{
                        // 根据名字对应到相应的系列
-                       name: '销量',
-                       data: nums
+                       name: '今日关注数',
+                       data: result.followNum
+                   },
+                   {
+                	// 根据名字对应到相应的系列
+                       name: '今日购买数',
+                       data: result.pNum
+                   },
+                   {
+                	// 根据名字对应到相应的系列
+                       name: '总关注数',
+                       data: result.zfollowNum
                    }]
                });
                

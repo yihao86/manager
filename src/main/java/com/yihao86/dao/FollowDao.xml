@@ -12,4 +12,11 @@
 			AND f_time = DATE(#{f_time})
 		</if>
 	</select>
+	
+	<select id="fandDay" resultType="int">
+		SELECT COUNT(0) followNum 
+		FROM follow 
+		WHERE f_ftid = #{f_ftid}
+		AND f_time &lt;= DATE(#{f_time})
+	</select>
 </mapper>

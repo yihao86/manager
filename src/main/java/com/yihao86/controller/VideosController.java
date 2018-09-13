@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -73,7 +74,13 @@ public class VideosController {
 		mav.addObject("teacher", teacher);
 		mav.addObject("list",list);
 		int num = fs.fandFollowNum(session);
+		int follow = fs.fandDay(teacher.getTid());
+		int pnum = fs.fandPnum(teacher.getTid());
+		int pnumz = fs.fandNum(teacher.getTid());
 		mav.addObject("num",num);
+		mav.addObject("follow",follow);
+		mav.addObject("pnum",pnum);
+		mav.addObject("pnumz",pnumz);
 		mav.setViewName("teacherManager.html");
 		return mav;
 	}

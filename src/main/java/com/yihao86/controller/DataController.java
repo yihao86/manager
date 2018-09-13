@@ -1,6 +1,6 @@
 package com.yihao86.controller;
 
-import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -17,8 +17,9 @@ public class DataController {
 	private FollowService fs;
 	
 	@RequestMapping("/fandData")
-	public List<Integer> dataInfo(HttpSession session) {
-		List<Integer> list = fs.fandFollow(session);
-		return list;
+	public Map<String,Object> dataInfo(HttpSession session) {
+		
+		Map<String,Object> map = fs.fandFollow(session);
+		return map;
 	}
 }
