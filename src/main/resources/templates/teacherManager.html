@@ -14,7 +14,6 @@
     <title>教师管理中心</title>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/echarts.min.js"></script>
     <script>
         $(function() {
             $(".meun-item").click(function() {
@@ -494,156 +493,68 @@
             </div>
             <!--用户管理模块-->
             <div role="tabpanel" class="tab-pane" id="user">
-               
-                <div style="overflow: hidden;width: 1100px;height:600px;margin: 0 auto; margin-top: 24px; background-color: #fff;border: 1px solid #ebebeb;">
-                    <div class="data-div">
-                    <div style="width: 150px;height: 100px; float: left; margin:20px 0 10px 0px;" >
-                    	<div>
-                    		<p style="color: #354457;font-size: 16px;font-weight: 800;text-align: center;">关注总人数</p>
-                    		<p style="color: #772020;font-size: 20px;font-weight: 800;text-align: center;" th:text="${num}">10</p>
-                    	</div>
+                <div class="check-div form-inline" style="background-color: #eff3f6;">
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control input-sm" placeholder="输入文字搜索">
+                        <button class="btn btn-white btn-xs ">查 询 </button>
                     </div>
-                    <div style=" width: 150px;height: 100px; float: left; margin:20px 0 10px 0px" >
-                    	<div>
-                    		<p style="color: #354457;font-size: 16px;font-weight: 800;text-align: center;">今日关注人数</p>
-                    		<p style="color: #182465;font-size: 20px;font-weight: 800;text-align: center;">5</p>
-                    	</div>
-                    </div>
-                    <div style=" width: 150px;height: 100px; float: left; margin:20px 0 10px 0px" >
-                    	<div>
-                    		<p style="color: #354457;font-size: 16px;font-weight: 800;text-align: center;">今日购买人数</p>
-                    		<p style="color: #666;font-size: 20px;font-weight: 800;text-align: center;">3</p>
-                    	</div>
-                    </div>
-                    
-                    <div id="info" style="width: 1000px;height: 450px"></div>
-                    <script type="text/javascript">
-    // 初始化图表标签
-    var myChart = echarts.init(document.getElementById('info'));
-    var option = {
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-                type: 'cross',
-                crossStyle: {
-                    color: '#999'
-                }
-            }
-        },
-        toolbox: {
-            feature: {
-                dataView: {show: true, readOnly: false},
-                magicType: {show: true, type: ['line', 'bar']},
-                restore: {show: true},
-                saveAsImage: {show: true}
-            }
-        },
-        legend: {
-            data:['今日关注量','今日购买量','总人数']
-        },
-        xAxis: [
-            {
-                type: 'category',
-                data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11','12'],
-                axisPointer: {
-                    type: 'shadow'
-                }
-            }
-        ],
-        yAxis: [
-            {
-                type: 'value',
-                name: '数值',
-                min: 0,
-                max: 250,
-                interval: 50,
-                axisLabel: {
-                    formatter: '{value}'
-                }
-            },
-            {
-                type: 'value',
-                name: '总数',
-                min: 0,
-                max: 10000,
-                interval: 1000,
-                axisLabel: {
-                    formatter: '{value}'
-                }
-            }
-        ],
-        series: [
-            {
-                name:'今日关注数',
-                type:'bar',
-                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
-            },
-            {
-                name:'今日购买数',
-                type:'bar',
-                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
-            },
-            {
-                name:'总关注数',
-                type:'line',
-                yAxisIndex: 1,
-                data:[2000, 5000, 1000, 1000, 6520, 6000, 5000, 4000, 7500, 7000, 8000, 9000]
-            }
-        ]
-    };
-
-    myChart.setOption(option);
-    
-    
-    
-    myChart.showLoading();    //数据加载完之前先显示一段简单的loading动画
-    
-    var names=[];    //类别数组（实际用来盛放X轴坐标值）
-    var nums=[];    //销量数组（实际用来盛放Y坐标值）
-    
-    $.ajax({
-    type : "post",
-    async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
-    url : "fandData",    //请求发送到TestServlet处
-    data : {},
-    dataType : "json",        //返回数据形式为json
-    success : function(result) {
-        //请求成功时执行该函数内容，result即为服务器返回的json对象
-        if (result) {
-               for(var i=0;i<result.length;i++){       
-                  names.push(result[i].name);    //挨个取出类别并填入类别数组
-                }
-               for(var i=0;i<result.length;i++){       
-                   nums.push(result[i].num);    //挨个取出销量并填入销量数组
-                 }
-               myChart.hideLoading();    //隐藏加载动画
-               myChart.setOption({        //加载数据图表
-                   xAxis: {
-                       data: names
-                   },
-                   series: [{
-                       // 根据名字对应到相应的系列
-                       name: '销量',
-                       data: nums
-                   }]
-               });
-               
-        }
-    
-   },
-    error : function(errorMsg) {
-        //请求失败时执行该函数
-    alert("图表请求数据失败!");
-    myChart.hideLoading();
-    }
-})
-
-
-
-</script>
-                	</div>
-                <!--页码块-->
                 </div>
+                <div style="overflow: hidden;width: 1100px;margin: 0 auto; margin-top: 24px; background-color: #fff;border: 1px solid #ebebeb;">
+                    <div class="data-div">
+                    <div class="row tableHeader" style="background-color: #f1f1f1;margin: 15px 15px 10px 15px;padding-left: 0px;padding-right: 0px">
+                        <div class="col-xs-2 ">
+                            用户头像
+                        </div>
+                        <div class="col-xs-2">
+                            用户名称
+                        </div>
+                    </div>
+                    <div class="tablebody"  style="margin-top: 0px">
+
+                        <div class="row" style="border-radius: 5px;margin-top: 10px" th:each="u,nsStat:${ulist}">
+                            <div class="col-xs-2 " >
+                                <img src="images/1.bmp">
+                            </div>
+                            <div class="col-xs-2" th:text="${u.u_name}">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--页码块-->
+                <footer class="footer">
+                    <ul class="pagination">
+                        <li>
+                            <select>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </select>
+                            页
+                        </li>
+                        <li class="gray">
+                            共20页
+                        </li>
+                        <li>
+                            <i class="glyphicon glyphicon-menu-left">
+                            </i>
+                        </li>
+                        <li>
+                            <i class="glyphicon glyphicon-menu-right">
+                            </i>
+                        </li>
+                    </ul>
+                </footer>
+                </div>
+              
             </div>
             <!--评论管理模块-->
             <div role="tabpanel" class="tab-pane" id="scho">
@@ -1054,51 +965,36 @@
     		{
         		a.removeChild(aop[0]);  //循环删除所有子元素
     		}
-    	var ty = document.getElementById('tyName');
-    	var tyop = ty.children;        //获取select列表的所有子元素。
-    	for(var j=0,cd = tyop.length;j<cd;j++)   
-    		{
-        		ty.removeChild(tyop[0]);  //循环删除所有子元素
-    		}
+    	
     	var c = document.getElementById('cname');
     	var cop = c.children;        //获取select列表的所有子元素。
     	for(var f=0,clens = cop.length;f<clens;f++)   
     		{
         		c.removeChild(cop[0]);  //循环删除所有子元素
     		}
-	 //类型下拉框
-    	$.ajax({
-                    url: "TypeAll",
-                    dataType: "json",
-                    success: function (d) {
-                        $.each(d, function (index,tyunits) {
-                            $("#tyName").append("<option value="+tyunits.typeid+">" + tyunits.typename + "</option>");
-                        });
-                    },
- 
-                    error: function (XMLHttpRequest, textStatus, errorThrown) {
-                        alert("TypeAllerror");
-                    }
-                });
                 //专辑
                 $.ajax({
                     url: "AlbumAll",
                     dataType: "json",
                     success: function (adname) {
+                    	$("#aname").append("<option value='0' selected='selected'>--- 请 选 择 ---</option>");
                         $.each(adname, function (index,aunits) {
-                            $("#aname").append("<option value="+aunits.aid+">" + aunits.a_title + "</option>");
+                            $("#aname").append("<option value="+aunits.a_typeId+">" + aunits.a_title + "</option>");
                         });
+                        
                     },
  
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                         alert("AlbumAllerror");
                     }
                 });
+                
                 //课程
                 $.ajax({
                     url: "CourseAll",
                     dataType: "json",
                     success: function (cdname) {
+                    $("#cname").append("<option value='0' selected='selected'>---  请 选 择  ---</option>");
                         $.each(cdname, function (index,cunits) {
                             $("#cname").append("<option value="+cunits.crid+">" + cunits.crname + "</option>");
                         });
@@ -1122,6 +1018,7 @@
                     url: "TypeAll",
                     dataType: "json",
                     success: function (d) {
+                     $("#atyName").append("<option value='0' selected='selected'>---  请 选 择  ---</option>");
                         $.each(d, function (index,tyunits) {
                             $("#atyName").append("<option value="+tyunits.typeid+">" + tyunits.typename + "</option>");
                         });
@@ -1144,6 +1041,7 @@ function cFind(){
                     url: "AlbumAll",
                     dataType: "json",
                     success: function (adname) {
+                     $("#caname").append("<option value='0' selected='selected'>---  请 选 择  ---</option>");
                         $.each(adname, function (index,aunits) {
                             $("#caname").append("<option value="+aunits.aid+">" + aunits.a_title + "</option>");
                         });
@@ -1154,6 +1052,35 @@ function cFind(){
                     }
                 });
 };
+	
+	$("#aname").change(function(){
+    var options=$("#aname option:selected");  //获取选中的项
+	alert(options.val());
+	var optionId=options.val();
+	//清空
+    var ty = document.getElementById('tyName');
+    	var tyop = ty.children;        //获取select列表的所有子元素。
+    	for(var j=0,cd = tyop.length;j<cd;j++)   
+    		{
+        		ty.removeChild(tyop[0]);  //循环删除所有子元素
+    		}
+     //类型下拉框
+    	$.ajax({
+                    url: "TypeAll?optionId="+optionId,                
+                    dataType: "json",
+                    success: function (d) {
+                     $("#tyName").append("<option value='0' selected='selected'>---  请 选 择  ---</option>");
+                        $.each(d, function (index,tyunits) {
+                            $("#tyName").append("<option value="+tyunits.typeid+">" + tyunits.typename + "</option>");
+                        });
+                    },
+ 
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert("TypeAllerror");
+                    }
+                });
+	});
+
 	$("#form-data").submit(function(){
 		//form-data表单验证。
         var vname=$("#vname").val();
@@ -1166,6 +1093,9 @@ function cFind(){
 		 }
 		return true;
 	})
+	
+	
+	
 function del(vid) {
 	$("#vid").val(vid);
 }

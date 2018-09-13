@@ -709,13 +709,10 @@
 	 	var tid = $('#tid').val();
 	 	var t_disable=$('#tdisable').val();
 	 	if(t_disable==1){
-	 		alert("123");
 	 		t_disable=0;
 	 	}else{
 	 		t_disable=1;
 	 	}
-	 	alert(tid);
-	 	alert(t_disable);
 		$.post("disableTeacher?tid="+tid+"&t_disable="+t_disable,function(text){
 			if(text=="Y"){
 				alert("修改成功！");
@@ -741,13 +738,10 @@
 	 	var vid = $('#vid').val();
 	 	var v_disable=$('#vdisable').val();
 	 	if(v_disable==1){
-	 		alert("123");
 	 		v_disable=0;
 	 	}else{
 	 		v_disable=1;
 	 	}
-	 	alert(vid);
-	 	alert(v_disable);
 		$.post("disableVideo?vid="+vid+"&v_disable="+v_disable,function(text){
 			if(text=="Y"){
 				alert("修改成功！");
