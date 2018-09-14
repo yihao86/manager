@@ -33,15 +33,16 @@ public class TeachersController {
 	 */
 	@RequestMapping("LoginTeacher")
 	public ModelAndView LoginTeacher(ModelAndView mav,Teachers teachers,HttpSession session) {
+		System.out.println("bbbbbbbbbbbbbbbbbb");
 		String skey = "teacher_"+RandomUtil.GetRandom();
 		session.setAttribute("skey", skey);
-		Teachers teacher = ts.findTeacher(skey,teachers);
-		
+		Teachers teacher = ts.findTeacher(skey,teachers);	
 		if (teacher == null) {
 			mav.addObject("message", "用户名或密码错误!");
 			mav.setViewName("pages-teacherLogin.html");
 		} else {
-			redisTemplate.opsForValue().set(skey,teacher);
+			System.out.println("bbbbbbbbbbbbbbbbbb");
+			redisTemplate.opsForValue().set(skey,teacher);	
 			mav.setViewName("forward:/VodeoManager");		
 		}
 		return mav;
@@ -56,28 +57,6 @@ public class TeachersController {
 	public void email(Teachers teacher) {
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 		
 	/**

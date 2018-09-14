@@ -64,6 +64,7 @@ public class VideosController {
 	 */
 	@RequestMapping("VodeoManager")
 	public ModelAndView VodeoManager(ModelAndView mav,HttpSession session) {
+		System.out.println("Jinle ");
 		String skey =(String)session.getAttribute("skey");
 		System.out.println("================================");
 		System.out.println(skey);
