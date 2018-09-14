@@ -27,4 +27,9 @@
   <select id="findNameById" resultType="Type">
    SELECT typename FROM `type` WHERE typeid=#{typeid}
   </select>
+  
+  <!--查询所有父ID  -->
+  <select id="selectByFtrID" resultType="int">
+   SELECT `f_trid` FROM `type` WHERE `f_trid`=`typeid`
+  </select>
 </mapper>

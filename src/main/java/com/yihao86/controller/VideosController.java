@@ -166,7 +166,7 @@ public class VideosController {
             if (!files[i].isEmpty()) {
                 try {
         			MultipartFile file = files[i];
-        			file.transferTo(new File(path+fileName));               	           
+        			file.transferTo(new File(path+fileName));    //写入文件           	           
                     //通过CommonsMultipartFile的方法直接写文件（注意这个时候）
         		    FileOutputStream fos = new FileOutputStream(path
                             + fileName);

@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Param;
 
 import com.yihao86.pojo.Teachers;
+import com.yihao86.pojo.Videos;
 
 public interface TeachersDao {
 	//老师登录账号
@@ -25,4 +26,10 @@ public interface TeachersDao {
 	
 	//注册教师账号
 	Teachers RegisterTeacher(Teachers teacher);
+	
+	public Map<String,Object> findVideoByVid(@Param("vid") int vid);
+	
+	public Videos selectByVid(@Param("vid") int vid);
+	
+	public int updateByIdVideo(Videos videos);
 }

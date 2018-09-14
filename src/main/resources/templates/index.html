@@ -492,29 +492,34 @@
                                     操作
                                 </div>
                             </div>
-                            <div class="tablebody" style="margin-top: 0px" th:each="ty,nsStat:${tylist}">
-                                    <div class="row" style="border-radius: 5px;margin-top: 0px" >
-                                        <div id="topCD" class="col-lg-4 col-md-4 col-sm-4 col-xs-4" role="button" data-toggle="collapse" data-parent="#accordion" href="'#collapse'+ty.typeid" aria-expanded="true" aria-controls="collapseOne">
-                                            <span id="topC" onClick="changeC()" class="glyphicon glyphicon-triangle-bottom"></span><span th:text="${ty.typename}"></span>
+                             <div class="tablebody">                        
+                                <!--系统管理折叠狂-->
+                                <div id="tablebody" th:each="ftype,ff:${tylist}" class="collapse in" aria-expanded="true">
+                                    <div class="row">
+                                        <div id="topBD" onClick="changeA()" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 levl2" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAccount" aria-expanded="true" aria-controls="collapseOne">
+                                            <span onClick="changeB()" id="topB" class="glyphicon glyphicon-triangle-bottom"></span> <span th:text="${ftype.typename}">账号管理</span>
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                             <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
                                             <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
                                         </div>
-                                     </div>
-                                    <!--地区管理折叠狂-->
-                                    <div id="'collapse'" class="collapse in" aria-expanded="true">
-                                        <div class="row" th:each="tys,nsStat:${ty.subTypes}">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                                <span></span><span th:text="${tys.typename}"></span>
+                                    </div>
+                                    <!--用户管理折叠狂-->
+                                    <div id="collapseAccount"  class="collapse in" aria-expanded="true">
+                                        <div th:each="m,index:${map.get(ftype.f_trid)}" class="row">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  levl3">
+                                                <span class=""> &nbsp;</span><span th:text="${m.typename}">资源管理</span>
                                             </div>
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                                 <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#changeSource">修改</button>
                                                 <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteSource">删除</button>
                                             </div>
-                                        </div>
+                                        </div>                  
                                     </div>
+                                </div>   
+                                                     
                             </div>
+                            
                         </div>
                         <!--页码块-->
                         <footer class="footer">

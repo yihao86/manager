@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.List;
 import java.util.Map;
+import java.lang.Object;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,11 +46,19 @@ public class ManagerController {
 	 */
 	@RequestMapping("UManager")
 	public ModelAndView UManager(ModelAndView mav,HttpServletRequest req) {
+		
 		List<Map<String, Object>> ulist=us.findAll();
+		
 		List<Map<String, Object>> tlist=ts.findTeacherInfo();
+		
 		int count=ts.countTeacher();
 		List<Map<String, Object>> vlist=vs.findAllVideo();
+		
 		List<Type> tylist=tys.selectType();
+		
+		Map<Integer, Object> map=tys.findAllType();
+		
+		mav.addObject("map", map);
 		mav.addObject("ulist",ulist);
 		mav.addObject("tlist",tlist);
 		mav.addObject("vlist",vlist);

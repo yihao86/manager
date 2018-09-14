@@ -1,6 +1,9 @@
 
 package com.yihao86.controller;
 
+import java.io.IOException;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -9,9 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.yihao86.pojo.Teachers;
+import com.yihao86.pojo.Videos;
 import com.yihao86.service.TeachersService;
 import com.yihao86.service.impl.RandomUtil;
 
@@ -96,5 +103,26 @@ public class TeachersController {
 			return "pages-teacherLogin.html";
 
 		}
-	
+
+
+/**
+ * 查询视频详情
+ * @param vid
+ * @return
+ */
+	@ResponseBody
+	@RequestMapping("findVideo")
+	public Map<String,Object> findVideo(String vid){
+		Map<String,Object> map=	ts.selectVideosByVid(Integer.valueOf(vid));			
+		return map;		
 	}
+	
+	@RequestMapping("/updateViodes")
+	public String updateByVid(Videos videos,@RequestParam("files") MultipartFile files) throws IOException, Exception {
+	    System.out.println("hzxhcxzc");
+		ts.updateByVid(videos, files);
+		  
+		return "forward:/VodeoManager";			
+	}
+	
+}

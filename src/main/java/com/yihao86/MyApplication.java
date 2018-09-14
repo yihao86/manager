@@ -12,7 +12,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class MyApplication extends SpringBootServletInitializer {
 	
 	public static void main(String[] args) {
+		
 		SpringApplication sa = new SpringApplication(MyApplication.class);
+		
 		sa.run(args);
 	}
 }

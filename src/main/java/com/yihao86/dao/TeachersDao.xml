@@ -39,4 +39,22 @@
  	<select id="findByIdName" resultType="String">
      SELECT t_name FROM `teachers` WHERE tid=#{tid}
   </select>
+  
+  <select id="findVideoByVid" resultType="map">
+  SELECT v.`vid`,v.`v_name`,v.`v_imgs`,v.`v_difficulty`,v.`v_vpath` AS v_path,c.`crname`,
+  a.`a_title`,t.`typename`
+  FROM `videos` v,`course` c,`album` a,`type` t
+  WHERE v.`v_aid`=a.`aid` AND v.`v_crid`=c.`crid`
+  AND a.`a_typeId`=t.`typeid` AND v.`vid`=#{vid}
+  </select>
+  
+  <select id="selectByVid" resultType="Videos">  
+   SELECT `v_vpath`,`v_imgs` FROM `videos` v WHERE v.`vid`=#{vid}
+  </select>
+  
+  <update id="updateByIdVideo" parameterType="Videos">
+  UPDATE `videos` SET `v_name`=#{v_name},`v_imgs`=#{v_imgs} 
+  
+  where `vid`=#{vid}
+  </update>
 </mapper>
