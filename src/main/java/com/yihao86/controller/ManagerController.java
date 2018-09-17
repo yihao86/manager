@@ -46,12 +46,13 @@ public class ManagerController {
 	 */
 	@RequestMapping("UManager")
 	public ModelAndView UManager(ModelAndView mav,HttpServletRequest req) {
-		
+		System.out.println("跳转成功！");
 		List<Map<String, Object>> ulist=us.findAll();
 		
 		List<Map<String, Object>> tlist=ts.findTeacherInfo();
 		
 		int count=ts.countTeacher();
+		
 		List<Map<String, Object>> vlist=vs.findAllVideo();
 		
 		List<Type> tylist=tys.selectType();

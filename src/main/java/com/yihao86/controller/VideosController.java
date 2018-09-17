@@ -101,7 +101,7 @@ public class VideosController {
 		response.setContentType("text/html;charset=gbk");
 		PrintWriter out= response.getWriter();		
 		Videos da=vs.VideoById(vid);
-	     String d=JSON.toJSONString(da);
+	    String d=JSON.toJSONString(da);
 	     out.write(d);
 	     out.flush();
 	     out.close();

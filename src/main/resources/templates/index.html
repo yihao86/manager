@@ -18,7 +18,7 @@
         	<link href="css/video-js.min.css" rel="stylesheet">
 
 		<script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
-		
+		<script src="js/echarts.min.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
       
@@ -235,66 +235,8 @@
                     </div>
             <!--用户管理模块-->
             <div role="tabpanel" class="tab-pane" id="user">
-                <div class="check-div form-inline" style="background-color: #eff3f6;">
-                
-                
-                </div>
-                <div style="overflow: hidden;width: 1100px;margin: 0 auto; margin-top: 24px; background-color: #fff;border: 1px solid #ebebeb;">
-                <div class="data-div">
-                    <div class="row tableHeader"  style="background-color: #f1f1f1;margin: 15px 15px 10px 15px;padding-left: 0px;padding-right: 0px">
-                        <div class="col-xs-3 ">
-                            用户头像
-                        </div>
-                        <div class="col-xs-3">
-                            用户名称
-                        </div>
-                    </div>
-                    <div class="tablebody" style="margin-top: 0px">
-
-                        <div class="row" style="border-radius: 5px;margin-top: 10px" th:each="u,nsStat:${ulist}">
-                            <div class="col-xs-3">
-                                <img src="images/1.bmp">
-                            </div>
-                            <div class="col-xs-3" th:text="${u.u_name}">
-                                李四
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-                <!--页码块-->
-                <footer class="footer">
-                    <ul class="pagination">
-                        <li>
-                            <select>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                            </select>
-                            页
-                        </li>
-                        <li class="gray">
-                            共20页
-                        </li>
-                        <li>
-                            <i class="glyphicon glyphicon-menu-left">
-                            </i>
-                        </li>
-                        <li>
-                            <i class="glyphicon glyphicon-menu-right">
-                            </i>
-                        </li>
-                    </ul>
-                </footer>
-                </div>
+               
+               
                 <!--弹出删除用户警告窗口-->
                 <div class="modal fade" id="deleteUser" role="dialog" aria-labelledby="gridSystemModalLabel">
                     <div class="modal-dialog" role="document">
@@ -370,8 +312,8 @@
                                 2018/8/26
                             </div>
                             <div class="col-xs-2">
-                                <button class="btn btn-success btn-xs" data-toggle="modal" th:onclick="'javascript:audit('+${v.vid}+')' " data-target="#reviseSchool">审核</button>
-                                <button class="btn btn-danger btn-xs" data-toggle="modal" th:onclick="'javascript: disV('+${v.vid}+','+${v.v_disable}+')' " data-target="#disableVideo" th:text="${v.v_disable} eq 0 ? '禁用':'启用'">禁用</button>
+                                <button class="btn btn-success btn-xs" data-toggle="modal" th:onclick="'javascript:audit('+${v.vid}+')' " data-target="#reviseSchool" th:text="${v.v_to_examine} eq 0 ? '未审核':'已审核' " th:disabled="${v.v_to_examine} eq 1">审核</button>
+                                <button class="btn btn-danger btn-xs" data-toggle="modal" th:onclick="'javascript: disV('+${v.vid}+','+${v.v_disable}+')' " data-target="#disableVideo" th:text="${v.v_disable} eq 0 ? '禁用':'启用'" di>禁用</button>
                             </div>
                         </div>
 
@@ -420,20 +362,22 @@
                             </div>
                             
                             <div class="modal-body"> 
-                            <input type="hidden" id="vid"/> 
+                            <input type="hidden" id="v_vid"/> 
                              <div style="width: 510px; height: 289px" id="m" class="m">
       						<video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="560" height="400"
 		 					 poster="" data-setup="{}" style="height: 282px !important">
-       						 <source src="" id="newVideoUrl" type="video/mp4" style="width: 282px">
+       						 <source src="http://localhost:9352/video/壁虎老师/JAVA/JAVA入门/2Java介绍/Java介绍.mp4" id="newVideoUrl" type="video/mp4" style="width: 282px">
       					 	 <p class="vjs-no-js"> To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a> </p>
      						 </video>
    							 </div>
    							<script src="js/video.min.js"></script> 
       						<script src="http://vjs.zencdn.net/5.19/lang/zh-CN.js"></script>
       						<script type="text/javascript">
+      						
 							var myPlayer = videojs('my-video');
 							videojs("my-video").ready(function(){
 							var myPlayer = this;
+							alert(myPlayer);
 							myPlayer.play();
 							});
 							</script> 
@@ -485,7 +429,7 @@
                         <div style="overflow: hidden;width: 1100px;margin: 0 auto; margin-top: 24px; background-color: #fff;border: 1px solid #ebebeb;">
                         <div class="data-div">
                             <div class="row tableHeader" style="background-color: #f1f1f1;margin: 15px 15px 10px 15px;padding-left: 0px;padding-right: 0px">
-                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
                                     类型名称
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -496,7 +440,7 @@
                                 <!--系统管理折叠狂-->
                                 <div id="tablebody" th:each="ftype,ff:${tylist}" class="collapse in" aria-expanded="true">
                                     <div class="row">
-                                        <div id="topBD" onClick="changeA()" class="col-lg-4 col-md-4 col-sm-4 col-xs-4 levl2" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAccount" aria-expanded="true" aria-controls="collapseOne">
+                                        <div id="topBD" onClick="changeA()" class="col-lg-10 col-md-10 col-sm-10 col-xs-10 levl2" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAccount" aria-expanded="true" aria-controls="collapseOne">
                                             <span onClick="changeB()" id="topB" class="glyphicon glyphicon-triangle-bottom"></span> <span th:text="${ftype.typename}">账号管理</span>
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -507,7 +451,7 @@
                                     <!--用户管理折叠狂-->
                                     <div id="collapseAccount"  class="collapse in" aria-expanded="true">
                                         <div th:each="m,index:${map.get(ftype.f_trid)}" class="row">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  levl3">
+                                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  levl3" style="padding-left: 70px;">
                                                 <span class=""> &nbsp;</span><span th:text="${m.typename}">资源管理</span>
                                             </div>
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -776,19 +720,26 @@
                             var data = data;
                             var video = eval("("+data + ")");
                             //赋值
+                            $("#v_vid").val(vid);
                            $('#vname').html(video.v_name);
                            alert(video.v_vpath);
  							var videoSrc = "http://localhost:9352/video/"+video.v_vpath;//新的视频播放地址
  							alert(videoSrc);
  							//var newSrc="<source src='"+videoSrc+"' type='video/mp4' style='width:282px'/>";
-  							$("#my-video_html5_api source").prop("src",videoSrc);
+  						    $("#my-video_html5_api").prop("src",videoSrc);
+ 							$("#newVideoUrl").prop("src",videoSrc);	
+  							var myPlayer = videojs('my-video');			
+							videojs("my-video").ready(function(){
+							var myPlayer = this;
+							myPlayer.play();
+							});			
                     }
         },"json");
     };
     
     //视频审核
 	function examine(){
-	 	var vid = $('#vid').val();
+	 	var vid = $("#v_vid").val();
 	 	alert(vid);
 		$.post("examineVideo?vid="+vid,function(text){
 			if(text=="Y"){

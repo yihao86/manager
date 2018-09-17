@@ -50,6 +50,7 @@ public class TeachersController {
 		} else {
 			System.out.println("bbbbbbbbbbbbbbbbbb");
 			redisTemplate.opsForValue().set(skey,teacher);	
+			System.out.println("88888888888888888888888");
 			mav.setViewName("forward:/VodeoManager");		
 		}
 		return mav;
